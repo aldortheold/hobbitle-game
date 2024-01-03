@@ -4,6 +4,8 @@
 
 🌃 The game supports two languages (Engish and Russian), as well as light and dark color themes.
 
+📊 During each playing session, you can look up your stats: the total number of tries, win rate, your current streak and your best streak.
+
 🎮 To play Hobbitle, clone this repository, open it and run hobbitle.py.
 
-📝 Still a lot of loop holes in the code, hoping to fix them soon!
+📝 Still a lot of imperfections in the code, hoping to fix them soon!
