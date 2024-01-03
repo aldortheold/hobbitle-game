@@ -1,6 +1,6 @@
 ## Wordle-like game built in Python Tkinter completely from scratch
 
-🧝‍♂️ The goal is to find the combination of 5 characters from J.R.R. Tolkien's "Hobbit" in 6 tries.
+🧝‍♂️ The goal is to find a combination of 5 characters from J.R.R. Tolkien's "Hobbit" in 6 tries.
 
 🌃 The game supports two languages (Engish and Russian), as well as light and dark color themes.
 
