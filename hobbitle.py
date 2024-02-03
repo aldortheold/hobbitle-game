@@ -3291,7 +3291,7 @@ while True:
         all_tries_label.place(x=44, y=348)
         try:
             percentage_label = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
-                                     text=f"{int((ALL_WINS / ALL_TRIES) * 100)}%", font=("Bandshift", 38))
+                                     text=f"{round((ALL_WINS / ALL_TRIES) * 100)}%", font=("Bandshift", 38))
         except ZeroDivisionError:
             percentage_label = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
                                      text="0%", font=("Bandshift", 38))
