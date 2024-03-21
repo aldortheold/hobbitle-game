@@ -30,46 +30,46 @@ while True:
 
     logo = PhotoImage(file="img/logo_about.png")
     stats = PhotoImage(file="img/stats.png")
-    stats_light = PhotoImage(file="img/stats_light.png")
+    statsLight = PhotoImage(file="img/stats_light.png")
     settings = PhotoImage(file="img/settings.png")
-    settings_light = PhotoImage(file="img/settings_light.png")
+    settingsLight = PhotoImage(file="img/settings_light.png")
     enter = PhotoImage(file="img/enter.png")
-    enter_light = PhotoImage(file="img/enter_light.png")
+    enterLight = PhotoImage(file="img/enter_light.png")
     backspace = PhotoImage(file="img/backspace.png")
-    backspace_light = PhotoImage(file="img/backspace_light.png")
+    backspaceLight = PhotoImage(file="img/backspace_light.png")
     label = PhotoImage(file="img/label.png")
     awesome = PhotoImage(file="img/awesome.png")
-    awesome_ru = PhotoImage(file="img/awesome_ru.png")
+    awesomeRu = PhotoImage(file="img/awesome_ru.png")
     excellent = PhotoImage(file="img/excellent.png")
-    excellent_ru = PhotoImage(file="img/excellent_ru.png")
-    great_job = PhotoImage(file="img/great_job.png")
-    great_job_ru = PhotoImage(file="img/great_job_ru.png")
+    excellentRu = PhotoImage(file="img/excellent_ru.png")
+    greatJob = PhotoImage(file="img/great_job.png")
+    greatJobRu = PhotoImage(file="img/great_job_ru.png")
     outstanding = PhotoImage(file="img/outstanding.png")
-    outstanding_ru = PhotoImage(file="img/outstanding_ru.png")
-    well_done = PhotoImage(file="img/well_done.png")
-    well_done_ru = PhotoImage(file="img/well_done_ru.png")
-    the_sol_was = PhotoImage(file="img/the_sol_was.png")
-    the_sol_was_ru = PhotoImage(file="img/the_sol_was_ru.png")
-    play_again = PhotoImage(file="img/play_again.png")
-    play_again_ru = PhotoImage(file="img/play_again_ru.png")
-    img_exit = PhotoImage(file="img/img_exit.png")
-    img_exit_ru = PhotoImage(file="img/img_exit_ru.png")
+    outstandingRu = PhotoImage(file="img/outstanding_ru.png")
+    wellDone = PhotoImage(file="img/well_done.png")
+    wellDoneRu = PhotoImage(file="img/well_done_ru.png")
+    theSolWas = PhotoImage(file="img/the_sol_was.png")
+    theSolWasRu = PhotoImage(file="img/the_sol_was_ru.png")
+    playAgain = PhotoImage(file="img/play_again.png")
+    playAgainRu = PhotoImage(file="img/play_again_ru.png")
+    imgExit = PhotoImage(file="img/img_exit.png")
+    imgExitRu = PhotoImage(file="img/img_exit_ru.png")
     rules = PhotoImage(file="img/rules.png")
-    rules_ru = PhotoImage(file="img/rules_ru.png")
-    close_r = PhotoImage(file="img/close_r.png")
-    settings_list = PhotoImage(file="img/settings_list.png")
-    settings_list_ru = PhotoImage(file="img/settings_list_ru.png")
-    dark_button = PhotoImage(file="img/dark_button.png")
-    dark_button_ru = PhotoImage(file="img/dark_button_ru.png")
-    light_button = PhotoImage(file="img/light_button.png")
-    light_button_ru = PhotoImage(file="img/light_button_ru.png")
-    english_button = PhotoImage(file="img/english_button.png")
-    english_button_ru = PhotoImage(file="img/english_button_ru.png")
-    russian_button = PhotoImage(file="img/russian_button.png")
-    russian_button_ru = PhotoImage(file="img/russian_button_ru.png")
-    stats_w = PhotoImage(file="img/stats_w.png")
-    stats_w_ru = PhotoImage(file="img/stats_w_ru.png")
-    close_st = PhotoImage(file="img/close_st.png")
+    rulesRu = PhotoImage(file="img/rules_ru.png")
+    closeR = PhotoImage(file="img/close_r.png")
+    settingsList = PhotoImage(file="img/settings_list.png")
+    settingsListRu = PhotoImage(file="img/settings_list_ru.png")
+    darkButton = PhotoImage(file="img/dark_button.png")
+    darkButtonRu = PhotoImage(file="img/dark_button_ru.png")
+    lightButton = PhotoImage(file="img/light_button.png")
+    lightButtonRu = PhotoImage(file="img/light_button_ru.png")
+    englishButton = PhotoImage(file="img/english_button.png")
+    englishButtonRu = PhotoImage(file="img/english_button_ru.png")
+    russianButton = PhotoImage(file="img/russian_button.png")
+    russianButtonRu = PhotoImage(file="img/russian_button_ru.png")
+    statsW = PhotoImage(file="img/stats_w.png")
+    statsWRu = PhotoImage(file="img/stats_w_ru.png")
+    closeSt = PhotoImage(file="img/close_st.png")
 
     gandalf = PhotoImage(file="img/gandalf.png")
     bilbo = PhotoImage(file="img/bilbo.png")
@@ -83,41 +83,41 @@ while True:
     kili = PhotoImage(file="img/kili.png")
     troll = PhotoImage(file="img/troll.png")
     gollum = PhotoImage(file="img/gollum.png")
-    great_goblin = PhotoImage(file="img/great_goblin.png")
+    greatGoblin = PhotoImage(file="img/great_goblin.png")
     smaug = PhotoImage(file="img/smaug.png")
 
-    keyboard = [gandalf, bilbo, thorin, elrond, beorn, balin, dwalin, gloin, fili, kili, troll, gollum, great_goblin, smaug]
+    keyboard = [gandalf, bilbo, thorin, elrond, beorn, balin, dwalin, gloin, fili, kili, troll, gollum, greatGoblin, smaug]
     solution = random.sample(keyboard, 5)
-    guess1, g1_b = [], []
-    guess2, g2_b = [], []
-    guess3, g3_b = [], []
-    guess4, g4_b = [], []
-    guess5, g5_b = [], []
-    guess6, g6_b = [], []
+    guess1, g1B = [], []
+    guess2, g2B = [], []
+    guess3, g3B = [], []
+    guess4, g4B = [], []
+    guess5, g5B = [], []
+    guess6, g6B = [], []
 
     guesses = [guess1, guess2, guess3, guess4, guess5, guess6]
-    g_buttons = [g1_b, g2_b, g3_b, g4_b, g5_b, g6_b]
+    gButtons = [g1B, g2B, g3B, g4B, g5B, g6B]
 
-    congrats_list = [awesome, excellent, great_job, outstanding, well_done]
-    congrats = random.choice(congrats_list)
+    congratsList = [awesome, excellent, greatJob, outstanding, wellDone]
+    congrats = random.choice(congratsList)
 
-    congrats_list_ru = [awesome_ru, excellent_ru, great_job_ru, outstanding_ru, well_done_ru]
-    congrats_ru = random.choice(congrats_list_ru)
+    congratsListRu = [awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu]
+    congratsRu = random.choice(congratsListRu)
 
     def closeInfo():
-        global rules_label, close_button
-        rules_label.destroy()
-        close_button.destroy()
+        global rulesLabel, closeButton
+        rulesLabel.destroy()
+        closeButton.destroy()
 
     def rulesCall():
-        global rules_label, close_button
+        global rulesLabel, closeButton
         if LANG == "ENG":
-            rules_label = Label(window, image=rules, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeInfo)
+            rulesLabel = Label(window, image=rules, bg="#002b82")
+            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeInfo)
         elif LANG == "RU":
-            rules_label = Label(window, image=rules_ru, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeInfo)
-        rules_label.place(x=0, y=0), close_button.place(x=494, y=18)
+            rulesLabel = Label(window, image=rulesRu, bg="#002b82")
+            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeInfo)
+        rulesLabel.place(x=0, y=0), closeButton.place(x=494, y=18)
 
     aboutButton = Button(window, width=50, height=50, image=logo, command=rulesCall)
     titleLabel = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), fg="#daaf00")
@@ -162,8 +162,8 @@ while True:
     line3, line4 = [l11, l12, l13, l14, l15], [l16, l17, l18, l19, l20]
     line5, line6 = [l21, l22, l23, l24, l25], [l26, l27, l28, l29, l30]
 
-    line1_6 = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16,
-               l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30]
+    lines = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16,
+            l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30]
     
     if THEME == "LIGHT":
         aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
@@ -171,7 +171,7 @@ while True:
             titleLabel.config(text="HOBBITLE", bg="#f0f0f0")
         elif LANG == "RU":
             titleLabel.config(text="ХОББИТЛИ", bg="#f0f0f0")    
-        for field in line1_6:
+        for field in lines:
             field.config(bg="#f0f0f0")
     elif THEME == "DARK":
         aboutButton.config(bg="#222222", activebackground="#222222")
@@ -179,7 +179,7 @@ while True:
             titleLabel.config(text="HOBBITLE", bg="#111111")
         elif LANG == "RU":
             titleLabel.config(text="ХОББИТЛИ", bg="#111111")
-        for field in line1_6:
+        for field in lines:
             field.config(bg="#222222")
 
     aboutButton.place(x=10, y=10), titleLabel.place(x=100, y=0)
@@ -193,15 +193,15 @@ while True:
     count = 0
 
     def charCall(char):
-        global count, guesses, g_buttons, guess6, g6_b, key_buttons, keyboard
+        global count, guesses, gButtons, guess6, g6B, keyButtons, keyboard
         while count < 30:
-            line1_6[count].config(image=char)
+            lines[count].config(image=char)
             if count != 30:
                 guesses[count // 5].append(char)
-                g_buttons[count // 5].append(key_buttons[keyboard.index(char)])
+                gButtons[count // 5].append(keyButtons[keyboard.index(char)])
             else:
                 guess6.append(char)
-                g6_b.append(key_buttons[keyboard.index(char)])
+                g6B.append(keyButtons[keyboard.index(char)])
             count += 1
             break
 
@@ -242,202 +242,202 @@ while True:
         charCall(gollum)
 
     def greatGoblinCall():
-        charCall(great_goblin)
+        charCall(greatGoblin)
 
     def smaugCall():
         charCall(smaug)
 
     def enterCall():
-        global count, guess1, guess2, guess3, guess4, guess5, guess6, congrats_label, the_sol_was_label
-        global new_game_button, exit_button, ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
+        global count, guess1, guess2, guess3, guess4, guess5, guess6, congratsLabel, theSolWasLabel
+        global newGameButton, exitButton, ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
         if LANG == "ENG":
-            congrats_label = Label(window, image=congrats, width=554, height=215, bg="#179923")
-            the_sol_was_label = Label(window, image=the_sol_was, width=554, height=215, bg="#9a0000")
-            new_game_button = Button(window, image=play_again, bg="#002b82", command=newGame)
-            exit_button = Button(window, image=img_exit, bg="#f0a510", command=quit)
+            congratsLabel = Label(window, image=congrats, width=554, height=215, bg="#179923")
+            theSolWasLabel = Label(window, image=theSolWas, width=554, height=215, bg="#9a0000")
+            newGameButton = Button(window, image=playAgain, bg="#002b82", command=newGame)
+            exitButton = Button(window, image=imgExit, bg="#f0a510", command=quit)
         elif LANG == "RU":
-            congrats_label = Label(window, image=congrats_ru, width=554, height=215, bg="#179923")
-            the_sol_was_label = Label(window, image=the_sol_was_ru, width=554, height=215, bg="#9a0000")
-            new_game_button = Button(window, image=play_again_ru, bg="#002b82", command=newGame)
-            exit_button = Button(window, image=img_exit_ru, bg="#f0a510", command=quit)
+            congratsLabel = Label(window, image=congratsRu, width=554, height=215, bg="#179923")
+            theSolWasLabel = Label(window, image=theSolWasRu, width=554, height=215, bg="#9a0000")
+            newGameButton = Button(window, image=playAgainRu, bg="#002b82", command=newGame)
+            exitButton = Button(window, image=imgExitRu, bg="#f0a510", command=quit)
         if count == 5:
             if guess1 == solution:
-                for x in line1:
-                    x.config(bg="#08c700")
-                for y in g1_b:
-                    y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line1:
+                    character.config(bg="#08c700")
+                for keyButton in g1B:
+                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess1:
-                    if i in solution:
-                        if guess1.index(i) == solution.index(i):
-                            line1[guess1.index(i)].config(bg="#08c700")
-                            g1_b[guess1.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess1:
+                    if character in solution:
+                        if guess1.index(character) == solution.index(character):
+                            line1[guess1.index(character)].config(bg="#08c700")
+                            g1B[guess1.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line1[guess1.index(i)].config(bg="#ffcd00")
-                            g1_b[guess1.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line1[guess1.index(character)].config(bg="#ffcd00")
+                            g1B[guess1.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line1[guess1.index(i)].config(bg="#9e9e9e")
-                        g1_b[guess1.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        line1[guess1.index(character)].config(bg="#9e9e9e")
+                        g1B[guess1.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
         elif count == 10:
             if guess2 == solution:
-                for x in line2:
-                    x.config(bg="#08c700")
-                for y in g2_b:
-                    y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line2:
+                    character.config(bg="#08c700")
+                for keyButton in g2B:
+                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess2:
-                    if i in solution:
-                        if guess2.index(i) == solution.index(i):
-                            line2[guess2.index(i)].config(bg="#08c700")
-                            g2_b[guess2.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess2:
+                    if character in solution:
+                        if guess2.index(character) == solution.index(character):
+                            line2[guess2.index(character)].config(bg="#08c700")
+                            g2B[guess2.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line2[guess2.index(i)].config(bg="#ffcd00")
-                            g2_b[guess2.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line2[guess2.index(character)].config(bg="#ffcd00")
+                            g2B[guess2.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line2[guess2.index(i)].config(bg="#9e9e9e")
-                        g2_b[guess2.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        line2[guess2.index(character)].config(bg="#9e9e9e")
+                        g2B[guess2.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
         elif count == 15:
             if guess3 == solution:
-                for x in line3:
-                    x.config(bg="#08c700")
-                for y in g3_b:
-                    y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line3:
+                    character.config(bg="#08c700")
+                for keyButton in g3B:
+                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess3:
-                    if i in solution:
-                        if guess3.index(i) == solution.index(i):
-                            line3[guess3.index(i)].config(bg="#08c700")
-                            g3_b[guess3.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess3:
+                    if character in solution:
+                        if guess3.index(character) == solution.index(character):
+                            line3[guess3.index(character)].config(bg="#08c700")
+                            g3B[guess3.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line3[guess3.index(i)].config(bg="#ffcd00")
-                            g3_b[guess3.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line3[guess3.index(character)].config(bg="#ffcd00")
+                            g3B[guess3.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line3[guess3.index(i)].config(bg="#9e9e9e")
-                        g3_b[guess3.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        line3[guess3.index(character)].config(bg="#9e9e9e")
+                        g3B[guess3.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
         elif count == 20:
             if guess4 == solution:
-                for x in line4:
-                    x.config(bg="#08c700")
-                for y in g4_b:
-                    y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line4:
+                    character.config(bg="#08c700")
+                for keyButton in g4B:
+                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess4:
-                    if i in solution:
-                        if guess4.index(i) == solution.index(i):
-                            line4[guess4.index(i)].config(bg="#08c700")
-                            g4_b[guess4.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess4:
+                    if character in solution:
+                        if guess4.index(character) == solution.index(character):
+                            line4[guess4.index(character)].config(bg="#08c700")
+                            g4B[guess4.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line4[guess4.index(i)].config(bg="#ffcd00")
-                            g4_b[guess4.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line4[guess4.index(character)].config(bg="#ffcd00")
+                            g4B[guess4.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line4[guess4.index(i)].config(bg="#9e9e9e")
-                        g4_b[guess4.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        line4[guess4.index(character)].config(bg="#9e9e9e")
+                        g4B[guess4.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
         elif count == 25:
             if guess5 == solution:
-                for x in line5:
-                    x.config(bg="#08c700")
-                for y in g5_b:
-                    y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line5:
+                    character.config(bg="#08c700")
+                for keyButton in g5B:
+                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess5:
-                    if i in solution:
-                        if guess5.index(i) == solution.index(i):
-                            line5[guess5.index(i)].config(bg="#08c700")
-                            g5_b[guess5.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess5:
+                    if character in solution:
+                        if guess5.index(character) == solution.index(character):
+                            line5[guess5.index(character)].config(bg="#08c700")
+                            g5B[guess5.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line5[guess5.index(i)].config(bg="#ffcd00")
-                            g5_b[guess5.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line5[guess5.index(character)].config(bg="#ffcd00")
+                            g5B[guess5.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line5[guess5.index(i)].config(bg="#9e9e9e")
-                        g5_b[guess5.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        line5[guess5.index(character)].config(bg="#9e9e9e")
+                        g5B[guess5.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
         elif count == 30:
             if guess6 == solution:
-                for x in line6:
-                    x.config(bg="#08c700")
-                for y in g6_b:
-                        y.config(bg="#08c700", activebackground="#08c700")
-                congrats_label.place(x=10, y=500)
-                new_game_button.place(x=62, y=610)
-                exit_button.place(x=312, y=610)
+                for character in line6:
+                    character.config(bg="#08c700")
+                for keyButton in g6B:
+                        keyButton.config(bg="#08c700", activebackground="#08c700")
+                congratsLabel.place(x=10, y=500)
+                newGameButton.place(x=62, y=610)
+                exitButton.place(x=312, y=610)
                 ALL_TRIES += 1
                 ALL_WINS += 1
                 CURRENT_STREAK += 1
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for i in guess6:
-                    if i in solution:
-                        if guess6.index(i) == solution.index(i):
-                            line6[guess6.index(i)].config(bg="#08c700")
-                            g6_b[guess6.index(i)].config(bg="#08c700", activebackground="#08c700")
+                for character in guess6:
+                    if character in solution:
+                        if guess6.index(character) == solution.index(character):
+                            line6[guess6.index(character)].config(bg="#08c700")
+                            g6B[guess6.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line6[guess6.index(i)].config(bg="#ffcd00")
-                            g6_b[guess6.index(i)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            line6[guess6.index(character)].config(bg="#ffcd00")
+                            g6B[guess6.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line6[guess6.index(i)].config(bg="#9e9e9e")
-                        g6_b[guess6.index(i)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-                the_sol_was_label.place(x=10, y=500)
+                        line6[guess6.index(character)].config(bg="#9e9e9e")
+                        g6B[guess6.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                theSolWasLabel.place(x=10, y=500)
                 Label(window, image=solution[0], width=104, height=68, bg="#ff9165").place(x=28, y=550)
                 Label(window, image=solution[1], width=104, height=68, bg="#ff9165").place(x=130, y=550)
                 Label(window, image=solution[2], width=104, height=68, bg="#ff9165").place(x=233, y=550)
                 Label(window, image=solution[3], width=104, height=68, bg="#ff9165").place(x=336, y=550)
                 Label(window, image=solution[4], width=104, height=68, bg="#ff9165").place(x=439, y=550)
-                new_game_button.place(x=62, y=625)
-                exit_button.place(x=312, y=625)
+                newGameButton.place(x=62, y=625)
+                exitButton.place(x=312, y=625)
                 ALL_TRIES += 1
                 CURRENT_STREAK = 0
 
     def backspaceCall():
-        global count, guesses, g_buttons, guess6, g6_b
+        global count, guesses, gButtons, guess6, g6B
         try:
             while count > 0:
-                line1_6[count - 1].config(image=label)
-                if count % 5 != 0:
+                lines[count - 1].config(image=label)
+                if count != 30:
                     guesses[count // 5].remove(guesses[count // 5][-1])
-                    g_buttons[count // 5].remove(g_buttons[count // 5][-1])
+                    gButtons[count // 5].remove(gButtons[count // 5][-1])
                 else:
                     guess6.remove(guess6[-1])
-                    g6_b.remove(g6_b[-1])
+                    g6B.remove(g6B[-1])
                 count -= 1
                 break
         except Exception:
@@ -448,60 +448,53 @@ while True:
             if errorQuit:
                 window.destroy()
 
+    gandalfButton = Button(window, width=110, height=70, image=gandalf, command=gandalfCall)
+    bilboButton = Button(window, width=110, height=70, image=bilbo, command=bilboCall)
+    thorinButton = Button(window, width=110, height=70, image=thorin, command=thorinCall)
+    elrondButton = Button(window, width=110, height=70, image=elrond, command=elrondCall)
+    beornButton = Button(window, width=110, height=70, image=beorn, command=beornCall)
+    balinButton = Button(window, width=110, height=70, image=balin, command=balinCall)
+    dwalinButton = Button(window, width=110, height=70, image=dwalin, command=dwalinCall)
+    gloinButton = Button(window, width=110, height=70, image=gloin, command=gloinCall)
+    filiButton = Button(window, width=110, height=70, image=fili, command=filiCall)
+    kiliButton = Button(window, width=110, height=70, image=kili, command=kiliCall)
+    enterButton = Button(window, width=55, height=70, image=enter, command=enterCall)
+    trollButton = Button(window, width=110, height=70, image=troll, command=trollCall)
+    gollumButton = Button(window, width=110, height=70, image=gollum, command=gollumCall)
+    greatGoblinButton = Button(window, width=110, height=70, image=greatGoblin, command=greatGoblinCall)
+    smaugButton = Button(window, width=110, height=70, image=smaug, command=smaugCall)
+    backspaceButton = Button(window, width=55, height=70, image=backspace, command=backspaceCall)
+    
+    gandalfButton.place(x=10, y=500), bilboButton.place(x=120, y=500), thorinButton.place(x=230, y=500)
+    elrondButton.place(x=340, y=500), beornButton.place(x=450, y=500), balinButton.place(x=10, y=570)
+    dwalinButton.place(x=120, y=570), gloinButton.place(x=230, y=570), filiButton.place(x=340, y=570)
+    kiliButton.place(x=450, y=570), enterButton.place(x=10, y=640), trollButton.place(x=65, y=640)
+    gollumButton.place(x=175, y=640), greatGoblinButton.place(x=285, y=640), smaugButton.place(x=395, y=640)
+    backspaceButton.place(x=505, y=640)
+
+    keyButtons = [gandalfButton, bilboButton, thorinButton, elrondButton, beornButton, balinButton, dwalinButton,
+                  gloinButton, filiButton, kiliButton, trollButton, gollumButton, greatGoblinButton, smaugButton]
+
     if THEME == "LIGHT":
-        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalfCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilboCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorinCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrondCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        beorn_button = Button(window, width=110, height=70, image=beorn, command=beornCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        balin_button = Button(window, width=110, height=70, image=balin, command=balinCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalinCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloinCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        fili_button = Button(window, width=110, height=70, image=fili, command=filiCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        kili_button = Button(window, width=110, height=70, image=kili, command=kiliCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        enter_button = Button(window, width=55, height=70, image=enter, command=enterCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        troll_button = Button(window, width=110, height=70, image=troll, command=trollCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollumCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=greatGoblinCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaugCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        backspace_button = Button(window, width=55, height=70, image=backspace, command=backspaceCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        for keyButton in keyButtons:
+            keyButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
+        enterButton.config(image=enter, bg="#f0f0f0", activebackground="#f0f0f0")
+        backspaceButton.config(image=backspace, bg="#f0f0f0", activebackground="#f0f0f0")
     
     elif THEME == "DARK":
-        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalfCall, bg="#222222", activebackground="#222222")        
-        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilboCall, bg="#222222", activebackground="#222222")        
-        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorinCall, bg="#222222", activebackground="#222222")        
-        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrondCall, bg="#222222", activebackground="#222222")        
-        beorn_button = Button(window, width=110, height=70, image=beorn, command=beornCall, bg="#222222", activebackground="#222222")        
-        balin_button = Button(window, width=110, height=70, image=balin, command=balinCall, bg="#222222", activebackground="#222222")        
-        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalinCall, bg="#222222", activebackground="#222222")        
-        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloinCall, bg="#222222", activebackground="#222222")        
-        fili_button = Button(window, width=110, height=70, image=fili, command=filiCall, bg="#222222", activebackground="#222222")        
-        kili_button = Button(window, width=110, height=70, image=kili, command=kiliCall, bg="#222222", activebackground="#222222")        
-        enter_button = Button(window, width=55, height=70, image=enter_light, command=enterCall, bg="#222222", activebackground="#222222")        
-        troll_button = Button(window, width=110, height=70, image=troll, command=trollCall, bg="#222222", activebackground="#222222")        
-        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollumCall, bg="#222222", activebackground="#222222")        
-        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=greatGoblinCall, bg="#222222", activebackground="#222222")        
-        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaugCall, bg="#222222", activebackground="#222222")        
-        backspace_button = Button(window, width=55, height=70, image=backspace_light, command=backspaceCall, bg="#222222", activebackground="#222222")        
-    
-    gandalf_button.place(x=10, y=500), bilbo_button.place(x=120, y=500), thorin_button.place(x=230, y=500)
-    elrond_button.place(x=340, y=500), beorn_button.place(x=450, y=500), balin_button.place(x=10, y=570)
-    dwalin_button.place(x=120, y=570), gloin_button.place(x=230, y=570), fili_button.place(x=340, y=570)
-    kili_button.place(x=450, y=570), enter_button.place(x=10, y=640), troll_button.place(x=65, y=640)
-    gollum_button.place(x=175, y=640), great_goblin_button.place(x=285, y=640), smaug_button.place(x=395, y=640)
-    backspace_button.place(x=505, y=640)
-
-    key_buttons = [gandalf_button, bilbo_button, thorin_button, elrond_button, beorn_button, balin_button, dwalin_button,
-                   gloin_button, fili_button, kili_button, troll_button, gollum_button, great_goblin_button, smaug_button]
+        for keyButton in keyButtons:
+            keyButton.config(bg="#222222", activebackground="#222222")
+        enterButton.config(image=enterLight, bg="#222222", activebackground="#222222")
+        backspaceButton.config(image=backspaceLight, bg="#222222", activebackground="#222222")
 
     def closeSettings():
-        global settings_list_label, close_button, light_button_b, dark_button_b, english_button_b, russian_button_b
-        settings_list_label.destroy()
-        close_button.destroy()
-        light_button_b.destroy()
-        dark_button_b.destroy()
-        russian_button_b.destroy()
-        english_button_b.destroy()
+        global settingsListLabel, closeButton, lightButtonB, darkButtonB, englishButtonB, russianButtonB
+        settingsListLabel.destroy()
+        closeButton.destroy()
+        lightButtonB.destroy()
+        darkButtonB.destroy()
+        russianButtonB.destroy()
+        englishButtonB.destroy()
     
     def russian():
         global LANG
@@ -516,89 +509,89 @@ while True:
     def lightTheme():
         global THEME
         THEME = "LIGHT"
-        for i in line1_6:
-            i.config(bg="#f0f0f0")
-        for j in key_buttons:
-            j.config(bg="#f0f0f0", activebackground="#f0f0f0")
+        for line in lines:
+            line.config(bg="#f0f0f0")
+        for keyButton in keyButtons:
+            keyButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
         window.config(background="#f0f0f0"), titleLabel.config(bg="#f0f0f0")
         aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
-        stats_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=stats)
-        settings_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=settings)
-        enter_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=enter)
-        backspace_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=backspace)
+        statsButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=stats)
+        settingsButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=settings)
+        enterButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=enter)
+        backspaceButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=backspace)
 
     def darkTheme():
         global THEME
         THEME = "DARK"
-        for i in line1_6:
-            i.config(bg="#222222")
-        for j in key_buttons:
-            j.config(bg="#222222", activebackground="#222222")
+        for line in lines:
+            line.config(bg="#222222")
+        for keyButton in keyButtons:
+            keyButton.config(bg="#222222", activebackground="#222222")
         window.config(background="#111111"), titleLabel.config(bg="#111111")
         aboutButton.config(bg="#222222", activebackground="#222222")
-        stats_button.config(bg="#222222", activebackground="#222222", image=stats_light)
-        settings_button.config(bg="#222222", activebackground="#222222", image=settings_light)
-        enter_button.config(bg="#222222", activebackground="#222222", image=enter_light)
-        backspace_button.config(bg="#222222", activebackground="#222222", image=backspace_light)
+        statsButton.config(bg="#222222", activebackground="#222222", image=statsLight)
+        settingsButton.config(bg="#222222", activebackground="#222222", image=settingsLight)
+        enterButton.config(bg="#222222", activebackground="#222222", image=enterLight)
+        backspaceButton.config(bg="#222222", activebackground="#222222", image=backspaceLight)
 
     def settingsCall():
-        global settings_list_label, close_button, light_button_b, dark_button_b, english_button_b, russian_button_b
+        global settingsListLabel, closeButton, lightButtonB, darkButtonB, englishButtonB, russianButtonB
         if LANG == "ENG":
-            settings_list_label = Label(window, image=settings_list, width=574, height=725, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeSettings)
-            light_button_b = Button(window, image=light_button, bg="#002b82", activebackground="#002b82", command=lightTheme)
-            dark_button_b = Button(window, image=dark_button, bg="#002b82", activebackground="#002b82", command=darkTheme)
-            russian_button_b = Button(window, image=russian_button, bg="#002b82", activebackground="#002b82", command=russian)
-            english_button_b = Button(window, image=english_button, bg="#002b82", activebackground="#002b82", command=english)
+            settingsListLabel = Label(window, image=settingsList, width=574, height=725, bg="#002b82")
+            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
+            lightButtonB = Button(window, image=lightButton, bg="#002b82", activebackground="#002b82", command=lightTheme)
+            darkButtonB = Button(window, image=darkButton, bg="#002b82", activebackground="#002b82", command=darkTheme)
+            russianButtonB = Button(window, image=russianButton, bg="#002b82", activebackground="#002b82", command=russian)
+            englishButtonB = Button(window, image=englishButton, bg="#002b82", activebackground="#002b82", command=english)
         elif LANG == "RU":
-            settings_list_label = Label(window, image=settings_list_ru, width=574, height=725, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeSettings)
-            light_button_b = Button(window, image=light_button_ru, bg="#002b82", activebackground="#002b82", command=lightTheme)
-            dark_button_b = Button(window, image=dark_button_ru, bg="#002b82", activebackground="#002b82", command=darkTheme)
-            russian_button_b = Button(window, image=russian_button_ru, bg="#002b82", activebackground="#002b82", command=russian) 
-            english_button_b = Button(window, image=english_button_ru, bg="#002b82", activebackground="#002b82", command=english)
-        settings_list_label.place(x=0, y=0), close_button.place(x=494, y=18), light_button_b.place(x=300, y=220),
-        dark_button_b.place(x=300, y=300), russian_button_b.place(x=300, y=410), english_button_b.place(x=300, y=490)
+            settingsListLabel = Label(window, image=settingsListRu, width=574, height=725, bg="#002b82")
+            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
+            lightButtonB = Button(window, image=lightButtonRu, bg="#002b82", activebackground="#002b82", command=lightTheme)
+            darkButtonB = Button(window, image=darkButtonRu, bg="#002b82", activebackground="#002b82", command=darkTheme)
+            russianButtonB = Button(window, image=russianButtonRu, bg="#002b82", activebackground="#002b82", command=russian) 
+            englishButtonB = Button(window, image=englishButtonRu, bg="#002b82", activebackground="#002b82", command=english)
+        settingsListLabel.place(x=0, y=0), closeButton.place(x=494, y=18), lightButtonB.place(x=300, y=220),
+        darkButtonB.place(x=300, y=300), russianButtonB.place(x=300, y=410), englishButtonB.place(x=300, y=490)
 
     def closeStats():
-        global stats_w_label, close_button1, all_tries_label, percentage_label, current_streak_label, best_streak_label
-        stats_w_label.destroy()
-        close_button1.destroy()
-        all_tries_label.destroy()
-        percentage_label.destroy()
-        current_streak_label.destroy()
-        best_streak_label.destroy()
+        global statsWLabel, closeButton1, allTriesLabel, percentageLabel, currentStreakLabel, bestStreakLabel
+        statsWLabel.destroy()
+        closeButton1.destroy()
+        allTriesLabel.destroy()
+        percentageLabel.destroy()
+        currentStreakLabel.destroy()
+        bestStreakLabel.destroy()
 
     def statsCall():
-        global LANG, stats_w_label, close_button1, all_tries_label, percentage_label, current_streak_label, best_streak_label
+        global LANG, statsWLabel, closeButton1, allTriesLabel, percentageLabel, currentStreakLabel, bestStreakLabel
         if LANG == "ENG":
-            stats_w_label = Label(window, image=stats_w, width=560, height=248, bg="#002b82")
+            statsWLabel = Label(window, image=statsW, width=560, height=248, bg="#002b82")
         elif LANG == "RU":
-            stats_w_label = Label(window, image=stats_w_ru, width=560, height=248, bg="#002b82")
-        stats_w_label.place(x=5, y=242)
-        close_button1 = Button(window, image=close_st, bg="#002b82", activebackground="#002b82", command=closeStats)
-        close_button1.place(x=498, y=262)
-        all_tries_label = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=ALL_TRIES, font=("Bandshift", 38))
-        all_tries_label.place(x=44, y=348)
+            statsWLabel = Label(window, image=statsWRu, width=560, height=248, bg="#002b82")
+        statsWLabel.place(x=5, y=242)
+        closeButton1 = Button(window, image=closeSt, bg="#002b82", activebackground="#002b82", command=closeStats)
+        closeButton1.place(x=498, y=262)
+        allTriesLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=ALL_TRIES, font=("Bandshift", 38))
+        allTriesLabel.place(x=44, y=348)
         try:
-            percentage_label = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
+            percentageLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
                                      text=f"{round((ALL_WINS / ALL_TRIES) * 100)}%", font=("Bandshift", 38))
         except ZeroDivisionError:
-            percentage_label = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
+            percentageLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=4,
                                      text="0%", font=("Bandshift", 38))
-        percentage_label.place(x=142, y=348)
-        current_streak_label = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=CURRENT_STREAK, font=("Bandshift", 38))
-        current_streak_label.place(x=280, y=348)
-        best_streak_label = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=BEST_STREAK, font=("Bandshift", 38))
-        best_streak_label.place(x=420, y=348)
+        percentageLabel.place(x=142, y=348)
+        currentStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=CURRENT_STREAK, font=("Bandshift", 38))
+        currentStreakLabel.place(x=280, y=348)
+        bestStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=BEST_STREAK, font=("Bandshift", 38))
+        bestStreakLabel.place(x=420, y=348)
 
     if THEME == "LIGHT":
-        settings_button = Button(window, width=50, height=50, image=settings, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        stats_button = Button(window, width=50, height=50, image=stats, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
+        settingsButton = Button(window, width=50, height=50, image=settings, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        statsButton = Button(window, width=50, height=50, image=stats, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
     elif THEME == "DARK":
-        settings_button = Button(window, width=50, height=50, image=settings_light, command=settingsCall, bg="#222222", activebackground="#222222")
-        stats_button = Button(window, width=50, height=50, image=stats_light, bg="#222222", activebackground="#222222", command=statsCall)
-    settings_button.place(x=510, y=10)
-    stats_button.place(x=450, y=10)
+        settingsButton = Button(window, width=50, height=50, image=settingsLight, command=settingsCall, bg="#222222", activebackground="#222222")
+        statsButton = Button(window, width=50, height=50, image=statsLight, bg="#222222", activebackground="#222222", command=statsCall)
+    settingsButton.place(x=510, y=10)
+    statsButton.place(x=450, y=10)
     
     window.mainloop()
