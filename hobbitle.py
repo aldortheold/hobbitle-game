@@ -119,99 +119,44 @@ while True:
             close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeInfo)
         rules_label.place(x=0, y=0), close_button.place(x=494, y=18)
 
-    if THEME == "LIGHT":
-        about_button = Button(window, width=50, height=50, image=logo, command=rulesCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        if LANG == "ENG":
-            title_label = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), bg="#f0f0f0", fg="#daaf00")
-        elif LANG == "RU":
-            title_label = Label(window, text="ХОББИТЛИ", font=("Courier New", 50, "bold"), bg="#f0f0f0", fg="#daaf00")
+    aboutButton = Button(window, width=50, height=50, image=logo, command=rulesCall)
+    titleLabel = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), fg="#daaf00")
 
-        l1 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l2 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l3 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l4 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l5 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
+    l1 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l2 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l3 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l4 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l5 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
-        l6 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l7 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l8 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l9 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l10 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
+    l6 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l7 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l8 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l9 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l10 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
-        l11 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l12 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l13 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l14 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l15 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
+    l11 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l12 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l13 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l14 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l15 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
-        l16 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l17 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l18 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l19 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l20 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
+    l16 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l17 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l18 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l19 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l20 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
-        l21 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l22 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l23 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l24 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l25 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
+    l21 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l22 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l23 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l24 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l25 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
-        l26 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l27 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l28 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l29 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-        l30 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
-    
-    elif THEME == "DARK":
-        about_button = Button(window, width=50, height=50, image=logo, command=rulesCall, bg="#222222", activebackground="#222222")
-        if LANG == "ENG":
-            title_label = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), bg="#111111", fg="#daaf00")
-        elif LANG == "RU":
-            title_label = Label(window, text="ХОББИТЛИ", font=("Courier New", 50, "bold"), bg="#111111", fg="#daaf00")
-
-        l1 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l2 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l3 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l4 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l5 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        
-        l6 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l7 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l8 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l9 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l10 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-
-        l11 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l12 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l13 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l14 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l15 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-
-        l16 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l17 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l18 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l19 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l20 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-
-        l21 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l22 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l23 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l24 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l25 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-
-        l26 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l27 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l28 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l29 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")        
-        l30 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#222222")
-
-    about_button.place(x=10, y=10), title_label.place(x=100, y=0)
-    l1.place(x=10, y=70), l2.place(x=120, y=70), l3.place(x=230, y=70), l4.place(x=340, y=70), l5.place(x=450, y=70)
-    l6.place(x=10, y=140), l7.place(x=120, y=140), l8.place(x=230, y=140), l9.place(x=340, y=140), l10.place(x=450, y=140)
-    l11.place(x=10, y=210), l12.place(x=120, y=210), l13.place(x=230, y=210), l14.place(x=340, y=210), l15.place(x=450, y=210)
-    l16.place(x=10, y=280), l17.place(x=120, y=280), l18.place(x=230, y=280), l19.place(x=340, y=280), l20.place(x=450, y=280)
-    l21.place(x=10, y=350), l22.place(x=120, y=350), l23.place(x=230, y=350), l24.place(x=340, y=350), l25.place(x=450, y=350)
-    l26.place(x=10, y=420), l27.place(x=120, y=420), l28.place(x=230, y=420), l29.place(x=340, y=420), l30.place(x=450, y=420)
+    l26 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l27 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l28 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l29 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    l30 = Label(window, width=110, height=70, image=label, relief=RAISED)
 
     line1, line2 = [l1, l2, l3, l4, l5], [l6, l7, l8, l9, l10]
     line3, line4 = [l11, l12, l13, l14, l15], [l16, l17, l18, l19, l20]
@@ -219,6 +164,31 @@ while True:
 
     line1_6 = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16,
                l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30]
+    
+    if THEME == "LIGHT":
+        aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
+        if LANG == "ENG":
+            titleLabel.config(text="HOBBITLE", bg="#f0f0f0")
+        elif LANG == "RU":
+            titleLabel.config(text="ХОББИТЛИ", bg="#f0f0f0")    
+        for field in line1_6:
+            field.config(bg="#f0f0f0")
+    elif THEME == "DARK":
+        aboutButton.config(bg="#222222", activebackground="#222222")
+        if LANG == "ENG":
+            titleLabel.config(text="HOBBITLE", bg="#111111")
+        elif LANG == "RU":
+            titleLabel.config(text="ХОББИТЛИ", bg="#111111")
+        for field in line1_6:
+            field.config(bg="#222222")
+
+    aboutButton.place(x=10, y=10), titleLabel.place(x=100, y=0)
+    l1.place(x=10, y=70), l2.place(x=120, y=70), l3.place(x=230, y=70), l4.place(x=340, y=70), l5.place(x=450, y=70)
+    l6.place(x=10, y=140), l7.place(x=120, y=140), l8.place(x=230, y=140), l9.place(x=340, y=140), l10.place(x=450, y=140)
+    l11.place(x=10, y=210), l12.place(x=120, y=210), l13.place(x=230, y=210), l14.place(x=340, y=210), l15.place(x=450, y=210)
+    l16.place(x=10, y=280), l17.place(x=120, y=280), l18.place(x=230, y=280), l19.place(x=340, y=280), l20.place(x=450, y=280)
+    l21.place(x=10, y=350), l22.place(x=120, y=350), l23.place(x=230, y=350), l24.place(x=340, y=350), l25.place(x=450, y=350)
+    l26.place(x=10, y=420), l27.place(x=120, y=420), l28.place(x=230, y=420), l29.place(x=340, y=420), l30.place(x=450, y=420)
 
     count = 0
 
@@ -536,12 +506,12 @@ while True:
     def russian():
         global LANG
         LANG = "RU"
-        title_label.config(text="ХОББИТЛИ"), window.title("Хоббитли")
+        titleLabel.config(text="ХОББИТЛИ"), window.title("Хоббитли")
 
     def english():
         global LANG
         LANG = "ENG"
-        title_label.config(text="HOBBITLE"), window.title("Hobbitle")
+        titleLabel.config(text="HOBBITLE"), window.title("Hobbitle")
 
     def lightTheme():
         global THEME
@@ -550,8 +520,8 @@ while True:
             i.config(bg="#f0f0f0")
         for j in key_buttons:
             j.config(bg="#f0f0f0", activebackground="#f0f0f0")
-        window.config(background="#f0f0f0"), title_label.config(bg="#f0f0f0")
-        about_button.config(bg="#f0f0f0", activebackground="#f0f0f0")
+        window.config(background="#f0f0f0"), titleLabel.config(bg="#f0f0f0")
+        aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
         stats_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=stats)
         settings_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=settings)
         enter_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=enter)
@@ -564,8 +534,8 @@ while True:
             i.config(bg="#222222")
         for j in key_buttons:
             j.config(bg="#222222", activebackground="#222222")
-        window.config(background="#111111"), title_label.config(bg="#111111")
-        about_button.config(bg="#222222", activebackground="#222222")
+        window.config(background="#111111"), titleLabel.config(bg="#111111")
+        aboutButton.config(bg="#222222", activebackground="#222222")
         stats_button.config(bg="#222222", activebackground="#222222", image=stats_light)
         settings_button.config(bg="#222222", activebackground="#222222", image=settings_light)
         enter_button.config(bg="#222222", activebackground="#222222", image=enter_light)
