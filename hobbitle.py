@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import random
 
 LANG = "ENG"
@@ -458,188 +459,25 @@ while True:
                 CURRENT_STREAK = 0
 
     def backspaceCall():
-        global count, guess1, guess2, guess3, guess4, guess5, guess6
-        while count > 0:
-            if count == 30:
-                l30.config(image=label)
+        global count, guesses, g_buttons, guess6, g6_b
+        try:
+            while count > 0:
+                line1_6[count - 1].config(image=label)
+                if count % 5 != 0:
+                    guesses[count // 5].remove(guesses[count // 5][-1])
+                    g_buttons[count // 5].remove(g_buttons[count // 5][-1])
+                else:
+                    guess6.remove(guess6[-1])
+                    g6_b.remove(g6_b[-1])
                 count -= 1
-                guess6.remove(guess6[-1])
-                g6_b.remove(g6_b[-1])
                 break
-            elif count == 29:
-                l29.config(image=label)
-                count -= 1
-                guess6.remove(guess6[-1])
-                g6_b.remove(g6_b[-1])
-                break
-            elif count == 28:
-                l28.config(image=label)
-                count -= 1
-                guess6.remove(guess6[-1])
-                g6_b.remove(g6_b[-1])
-                break
-            elif count == 27:
-                l27.config(image=label)
-                count -= 1
-                guess6.remove(guess6[-1])
-                g6_b.remove(g6_b[-1])
-                break
-            elif count == 26:
-                l26.config(image=label)
-                count -= 1
-                guess6.remove(guess6[-1])
-                g6_b.remove(g6_b[-1])
-                break
-            elif count == 25:
-                l25.config(image=label)
-                count -= 1
-                guess5.remove(guess5[-1])
-                g5_b.remove(g5_b[-1])
-                break
-            elif count == 24:
-                l24.config(image=label)
-                count -= 1
-                guess5.remove(guess5[-1])
-                g5_b.remove(g5_b[-1])
-                break
-            elif count == 23:
-                l23.config(image=label)
-                count -= 1
-                guess5.remove(guess5[-1])
-                g5_b.remove(g5_b[-1])
-                break
-            elif count == 22:
-                l22.config(image=label)
-                count -= 1
-                guess5.remove(guess5[-1])
-                g5_b.remove(g5_b[-1])
-                break
-            elif count == 21:
-                l21.config(image=label)
-                count -= 1
-                guess5.remove(guess5[-1])
-                g5_b.remove(g5_b[-1])
-                break
-            elif count == 20:
-                l20.config(image=label)
-                count -= 1
-                guess4.remove(guess4[-1])
-                g4_b.remove(g4_b[-1])
-                break
-            elif count == 19:
-                l19.config(image=label)
-                count -= 1
-                guess4.remove(guess4[-1])
-                g4_b.remove(g4_b[-1])
-                break
-            elif count == 18:
-                l18.config(image=label)
-                count -= 1
-                guess4.remove(guess4[-1])
-                g4_b.remove(g4_b[-1])
-                break
-            elif count == 17:
-                l17.config(image=label)
-                count -= 1
-                guess4.remove(guess4[-1])
-                g4_b.remove(g4_b[-1])
-                break
-            elif count == 16:
-                l16.config(image=label)
-                count -= 1
-                guess4.remove(guess4[-1])
-                g4_b.remove(g4_b[-1])
-                break
-            elif count == 15:
-                l15.config(image=label)
-                count -= 1
-                guess3.remove(guess3[-1])
-                g3_b.remove(g3_b[-1])
-                break
-            elif count == 14:
-                l14.config(image=label)
-                count -= 1
-                guess3.remove(guess3[-1])
-                g3_b.remove(g3_b[-1])
-                break
-            elif count == 13:
-                l13.config(image=label)
-                count -= 1
-                guess3.remove(guess3[-1])
-                g3_b.remove(g3_b[-1])
-                break
-            elif count == 12:
-                l12.config(image=label)
-                count -= 1
-                guess3.remove(guess3[-1])
-                g3_b.remove(g3_b[-1])
-                break
-            elif count == 11:
-                l11.config(image=label)
-                count -= 1
-                guess3.remove(guess3[-1])
-                g3_b.remove(g3_b[-1])
-                break
-            elif count == 10:
-                l10.config(image=label)
-                count -= 1
-                guess2.remove(guess2[-1])
-                g2_b.remove(g2_b[-1])
-                break
-            elif count == 9:
-                l9.config(image=label)
-                count -= 1
-                guess2.remove(guess2[-1])
-                g2_b.remove(g2_b[-1])
-                break
-            elif count == 8:
-                l8.config(image=label)
-                count -= 1
-                guess2.remove(guess2[-1])
-                g2_b.remove(g2_b[-1])
-                break
-            elif count == 7:
-                l7.config(image=label)
-                count -= 1
-                guess2.remove(guess2[-1])
-                g2_b.remove(g2_b[-1])
-                break
-            elif count == 6:
-                l6.config(image=label)
-                count -= 1
-                guess2.remove(guess2[-1])
-                g2_b.remove(g2_b[-1])
-                break
-            elif count == 5:
-                l5.config(image=label)
-                count -= 1
-                guess1.remove(guess1[-1])
-                g1_b.remove(g1_b[-1])
-                break
-            elif count == 4:
-                l4.config(image=label)
-                count -= 1
-                guess1.remove(guess1[-1])
-                g1_b.remove(g1_b[-1])
-                break
-            elif count == 3:
-                l3.config(image=label)
-                count -= 1
-                guess1.remove(guess1[-1])
-                g1_b.remove(g1_b[-1])
-                break
-            elif count == 2:
-                l2.config(image=label)
-                count -= 1
-                guess1.remove(guess1[-1])
-                g1_b.remove(g1_b[-1])
-                break
-            elif count == 1:
-                l1.config(image=label)
-                count -= 1
-                guess1.remove(guess1[-1])
-                g1_b.remove(g1_b[-1])
-                break
+        except Exception:
+            if LANG == "ENG":
+                errorQuit = messagebox.askokcancel(title="Unexpected error!", message="Unexpected error occurred while deleting the character. Would you like to restart the game?")
+            elif LANG == "RU":
+                errorQuit = messagebox.askokcancel(title="Неожиданная ошибка!", message="Неожиданная ошибка произошла во время удаления персонажа. Перезапустить игру?")
+            if errorQuit:
+                window.destroy()
 
     if THEME == "LIGHT":
         gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalfCall, bg="#f0f0f0", activebackground="#f0f0f0")
