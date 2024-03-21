@@ -24,7 +24,7 @@ while True:
     elif THEME == "DARK":
         window.config(background="#111111")
 
-    def new_game():
+    def newGame():
         window.destroy()
 
     logo = PhotoImage(file="img/logo_about.png")
@@ -103,23 +103,23 @@ while True:
     congrats_list_ru = [awesome_ru, excellent_ru, great_job_ru, outstanding_ru, well_done_ru]
     congrats_ru = random.choice(congrats_list_ru)
 
-    def close_info():
+    def closeInfo():
         global rules_label, close_button
         rules_label.destroy()
         close_button.destroy()
 
-    def rules_call():
+    def rulesCall():
         global rules_label, close_button
         if LANG == "ENG":
             rules_label = Label(window, image=rules, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=close_info)
+            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeInfo)
         elif LANG == "RU":
             rules_label = Label(window, image=rules_ru, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=close_info)
+            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeInfo)
         rules_label.place(x=0, y=0), close_button.place(x=494, y=18)
 
     if THEME == "LIGHT":
-        about_button = Button(window, width=50, height=50, image=logo, command=rules_call, bg="#f0f0f0", activebackground="#f0f0f0")
+        about_button = Button(window, width=50, height=50, image=logo, command=rulesCall, bg="#f0f0f0", activebackground="#f0f0f0")
         if LANG == "ENG":
             title_label = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), bg="#f0f0f0", fg="#daaf00")
         elif LANG == "RU":
@@ -162,7 +162,7 @@ while True:
         l30 = Label(window, width=110, height=70, image=label, relief=RAISED, bg="#f0f0f0")
     
     elif THEME == "DARK":
-        about_button = Button(window, width=50, height=50, image=logo, command=rules_call, bg="#222222", activebackground="#222222")
+        about_button = Button(window, width=50, height=50, image=logo, command=rulesCall, bg="#222222", activebackground="#222222")
         if LANG == "ENG":
             title_label = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), bg="#111111", fg="#daaf00")
         elif LANG == "RU":
@@ -235,60 +235,60 @@ while True:
             break
 
 
-    def gandalf_call():
+    def gandalfCall():
         charCall(gandalf)
 
-    def bilbo_call():
+    def bilboCall():
         charCall(bilbo)
 
-    def thorin_call():
+    def thorinCall():
         charCall(thorin)
 
-    def elrond_call():
+    def elrondCall():
         charCall(elrond)
 
-    def beorn_call():
+    def beornCall():
         charCall(beorn)
 
-    def balin_call():
+    def balinCall():
         charCall(balin)
 
-    def dwalin_call():
+    def dwalinCall():
         charCall(dwalin)
 
-    def gloin_call():
+    def gloinCall():
         charCall(gloin)
 
-    def fili_call():
+    def filiCall():
         charCall(fili)
 
-    def kili_call():
+    def kiliCall():
         charCall(kili)
 
-    def troll_call():
+    def trollCall():
         charCall(troll)
 
-    def gollum_call():
+    def gollumCall():
         charCall(gollum)
 
-    def great_goblin_call():
+    def greatGoblinCall():
         charCall(great_goblin)
 
-    def smaug_call():
+    def smaugCall():
         charCall(smaug)
 
-    def enter_call():
+    def enterCall():
         global count, guess1, guess2, guess3, guess4, guess5, guess6, congrats_label, the_sol_was_label
         global new_game_button, exit_button, ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
         if LANG == "ENG":
             congrats_label = Label(window, image=congrats, width=554, height=215, bg="#179923")
             the_sol_was_label = Label(window, image=the_sol_was, width=554, height=215, bg="#9a0000")
-            new_game_button = Button(window, image=play_again, bg="#002b82", command=new_game)
+            new_game_button = Button(window, image=play_again, bg="#002b82", command=newGame)
             exit_button = Button(window, image=img_exit, bg="#f0a510", command=quit)
         elif LANG == "RU":
             congrats_label = Label(window, image=congrats_ru, width=554, height=215, bg="#179923")
             the_sol_was_label = Label(window, image=the_sol_was_ru, width=554, height=215, bg="#9a0000")
-            new_game_button = Button(window, image=play_again_ru, bg="#002b82", command=new_game)
+            new_game_button = Button(window, image=play_again_ru, bg="#002b82", command=newGame)
             exit_button = Button(window, image=img_exit_ru, bg="#f0a510", command=quit)
         if count == 5:
             if guess1 == solution:
@@ -457,7 +457,7 @@ while True:
                 ALL_TRIES += 1
                 CURRENT_STREAK = 0
 
-    def backspace_call():
+    def backspaceCall():
         global count, guess1, guess2, guess3, guess4, guess5, guess6
         while count > 0:
             if count == 30:
@@ -642,40 +642,40 @@ while True:
                 break
 
     if THEME == "LIGHT":
-        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalf_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilbo_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorin_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrond_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        beorn_button = Button(window, width=110, height=70, image=beorn, command=beorn_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        balin_button = Button(window, width=110, height=70, image=balin, command=balin_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalin_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloin_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        fili_button = Button(window, width=110, height=70, image=fili, command=fili_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        kili_button = Button(window, width=110, height=70, image=kili, command=kili_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        enter_button = Button(window, width=55, height=70, image=enter, command=enter_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        troll_button = Button(window, width=110, height=70, image=troll, command=troll_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollum_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=great_goblin_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaug_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        backspace_button = Button(window, width=55, height=70, image=backspace, command=backspace_call, bg="#f0f0f0", activebackground="#f0f0f0")
+        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalfCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilboCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorinCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrondCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        beorn_button = Button(window, width=110, height=70, image=beorn, command=beornCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        balin_button = Button(window, width=110, height=70, image=balin, command=balinCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalinCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloinCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        fili_button = Button(window, width=110, height=70, image=fili, command=filiCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        kili_button = Button(window, width=110, height=70, image=kili, command=kiliCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        enter_button = Button(window, width=55, height=70, image=enter, command=enterCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        troll_button = Button(window, width=110, height=70, image=troll, command=trollCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollumCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=greatGoblinCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaugCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        backspace_button = Button(window, width=55, height=70, image=backspace, command=backspaceCall, bg="#f0f0f0", activebackground="#f0f0f0")
     
     elif THEME == "DARK":
-        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalf_call, bg="#222222", activebackground="#222222")        
-        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilbo_call, bg="#222222", activebackground="#222222")        
-        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorin_call, bg="#222222", activebackground="#222222")        
-        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrond_call, bg="#222222", activebackground="#222222")        
-        beorn_button = Button(window, width=110, height=70, image=beorn, command=beorn_call, bg="#222222", activebackground="#222222")        
-        balin_button = Button(window, width=110, height=70, image=balin, command=balin_call, bg="#222222", activebackground="#222222")        
-        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalin_call, bg="#222222", activebackground="#222222")        
-        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloin_call, bg="#222222", activebackground="#222222")        
-        fili_button = Button(window, width=110, height=70, image=fili, command=fili_call, bg="#222222", activebackground="#222222")        
-        kili_button = Button(window, width=110, height=70, image=kili, command=kili_call, bg="#222222", activebackground="#222222")        
-        enter_button = Button(window, width=55, height=70, image=enter_light, command=enter_call, bg="#222222", activebackground="#222222")        
-        troll_button = Button(window, width=110, height=70, image=troll, command=troll_call, bg="#222222", activebackground="#222222")        
-        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollum_call, bg="#222222", activebackground="#222222")        
-        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=great_goblin_call, bg="#222222", activebackground="#222222")        
-        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaug_call, bg="#222222", activebackground="#222222")        
-        backspace_button = Button(window, width=55, height=70, image=backspace_light, command=backspace_call, bg="#222222", activebackground="#222222")        
+        gandalf_button = Button(window, width=110, height=70, image=gandalf, command=gandalfCall, bg="#222222", activebackground="#222222")        
+        bilbo_button = Button(window, width=110, height=70, image=bilbo, command=bilboCall, bg="#222222", activebackground="#222222")        
+        thorin_button = Button(window, width=110, height=70, image=thorin, command=thorinCall, bg="#222222", activebackground="#222222")        
+        elrond_button = Button(window, width=110, height=70, image=elrond, command=elrondCall, bg="#222222", activebackground="#222222")        
+        beorn_button = Button(window, width=110, height=70, image=beorn, command=beornCall, bg="#222222", activebackground="#222222")        
+        balin_button = Button(window, width=110, height=70, image=balin, command=balinCall, bg="#222222", activebackground="#222222")        
+        dwalin_button = Button(window, width=110, height=70, image=dwalin, command=dwalinCall, bg="#222222", activebackground="#222222")        
+        gloin_button = Button(window, width=110, height=70, image=gloin, command=gloinCall, bg="#222222", activebackground="#222222")        
+        fili_button = Button(window, width=110, height=70, image=fili, command=filiCall, bg="#222222", activebackground="#222222")        
+        kili_button = Button(window, width=110, height=70, image=kili, command=kiliCall, bg="#222222", activebackground="#222222")        
+        enter_button = Button(window, width=55, height=70, image=enter_light, command=enterCall, bg="#222222", activebackground="#222222")        
+        troll_button = Button(window, width=110, height=70, image=troll, command=trollCall, bg="#222222", activebackground="#222222")        
+        gollum_button = Button(window, width=110, height=70, image=gollum, command=gollumCall, bg="#222222", activebackground="#222222")        
+        great_goblin_button = Button(window, width=110, height=70, image=great_goblin, command=greatGoblinCall, bg="#222222", activebackground="#222222")        
+        smaug_button = Button(window, width=110, height=70, image=smaug, command=smaugCall, bg="#222222", activebackground="#222222")        
+        backspace_button = Button(window, width=55, height=70, image=backspace_light, command=backspaceCall, bg="#222222", activebackground="#222222")        
     
     gandalf_button.place(x=10, y=500), bilbo_button.place(x=120, y=500), thorin_button.place(x=230, y=500)
     elrond_button.place(x=340, y=500), beorn_button.place(x=450, y=500), balin_button.place(x=10, y=570)
@@ -687,7 +687,7 @@ while True:
     key_buttons = [gandalf_button, bilbo_button, thorin_button, elrond_button, beorn_button, balin_button, dwalin_button,
                    gloin_button, fili_button, kili_button, troll_button, gollum_button, great_goblin_button, smaug_button]
 
-    def close_settings():
+    def closeSettings():
         global settings_list_label, close_button, light_button_b, dark_button_b, english_button_b, russian_button_b
         settings_list_label.destroy()
         close_button.destroy()
@@ -706,7 +706,7 @@ while True:
         LANG = "ENG"
         title_label.config(text="HOBBITLE"), window.title("Hobbitle")
 
-    def light_theme():
+    def lightTheme():
         global THEME
         THEME = "LIGHT"
         for i in line1_6:
@@ -720,7 +720,7 @@ while True:
         enter_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=enter)
         backspace_button.config(bg="#f0f0f0", activebackground="#f0f0f0", image=backspace)
 
-    def dark_theme():
+    def darkTheme():
         global THEME
         THEME = "DARK"
         for i in line1_6:
@@ -734,26 +734,26 @@ while True:
         enter_button.config(bg="#222222", activebackground="#222222", image=enter_light)
         backspace_button.config(bg="#222222", activebackground="#222222", image=backspace_light)
 
-    def settings_call():
+    def settingsCall():
         global settings_list_label, close_button, light_button_b, dark_button_b, english_button_b, russian_button_b
         if LANG == "ENG":
             settings_list_label = Label(window, image=settings_list, width=574, height=725, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=close_settings)
-            light_button_b = Button(window, image=light_button, bg="#002b82", activebackground="#002b82", command=light_theme)
-            dark_button_b = Button(window, image=dark_button, bg="#002b82", activebackground="#002b82", command=dark_theme)
+            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeSettings)
+            light_button_b = Button(window, image=light_button, bg="#002b82", activebackground="#002b82", command=lightTheme)
+            dark_button_b = Button(window, image=dark_button, bg="#002b82", activebackground="#002b82", command=darkTheme)
             russian_button_b = Button(window, image=russian_button, bg="#002b82", activebackground="#002b82", command=russian)
             english_button_b = Button(window, image=english_button, bg="#002b82", activebackground="#002b82", command=english)
         elif LANG == "RU":
             settings_list_label = Label(window, image=settings_list_ru, width=574, height=725, bg="#002b82")
-            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=close_settings)
-            light_button_b = Button(window, image=light_button_ru, bg="#002b82", activebackground="#002b82", command=light_theme)
-            dark_button_b = Button(window, image=dark_button_ru, bg="#002b82", activebackground="#002b82", command=dark_theme)
+            close_button = Button(window, image=close_r, bg="#002b82", activebackground="#002b82", command=closeSettings)
+            light_button_b = Button(window, image=light_button_ru, bg="#002b82", activebackground="#002b82", command=lightTheme)
+            dark_button_b = Button(window, image=dark_button_ru, bg="#002b82", activebackground="#002b82", command=darkTheme)
             russian_button_b = Button(window, image=russian_button_ru, bg="#002b82", activebackground="#002b82", command=russian) 
             english_button_b = Button(window, image=english_button_ru, bg="#002b82", activebackground="#002b82", command=english)
         settings_list_label.place(x=0, y=0), close_button.place(x=494, y=18), light_button_b.place(x=300, y=220),
         dark_button_b.place(x=300, y=300), russian_button_b.place(x=300, y=410), english_button_b.place(x=300, y=490)
 
-    def close_stats():
+    def closeStats():
         global stats_w_label, close_button1, all_tries_label, percentage_label, current_streak_label, best_streak_label
         stats_w_label.destroy()
         close_button1.destroy()
@@ -762,14 +762,14 @@ while True:
         current_streak_label.destroy()
         best_streak_label.destroy()
 
-    def stats_call():
+    def statsCall():
         global LANG, stats_w_label, close_button1, all_tries_label, percentage_label, current_streak_label, best_streak_label
         if LANG == "ENG":
             stats_w_label = Label(window, image=stats_w, width=560, height=248, bg="#002b82")
         elif LANG == "RU":
             stats_w_label = Label(window, image=stats_w_ru, width=560, height=248, bg="#002b82")
         stats_w_label.place(x=5, y=242)
-        close_button1 = Button(window, image=close_st, bg="#002b82", activebackground="#002b82", command=close_stats)
+        close_button1 = Button(window, image=close_st, bg="#002b82", activebackground="#002b82", command=closeStats)
         close_button1.place(x=498, y=262)
         all_tries_label = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=ALL_TRIES, font=("Bandshift", 38))
         all_tries_label.place(x=44, y=348)
@@ -786,11 +786,11 @@ while True:
         best_streak_label.place(x=420, y=348)
 
     if THEME == "LIGHT":
-        settings_button = Button(window, width=50, height=50, image=settings, command=settings_call, bg="#f0f0f0", activebackground="#f0f0f0")
-        stats_button = Button(window, width=50, height=50, image=stats, bg="#f0f0f0", activebackground="#f0f0f0", command=stats_call)
+        settings_button = Button(window, width=50, height=50, image=settings, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
+        stats_button = Button(window, width=50, height=50, image=stats, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
     elif THEME == "DARK":
-        settings_button = Button(window, width=50, height=50, image=settings_light, command=settings_call, bg="#222222", activebackground="#222222")
-        stats_button = Button(window, width=50, height=50, image=stats_light, bg="#222222", activebackground="#222222", command=stats_call)
+        settings_button = Button(window, width=50, height=50, image=settings_light, command=settingsCall, bg="#222222", activebackground="#222222")
+        stats_button = Button(window, width=50, height=50, image=stats_light, bg="#222222", activebackground="#222222", command=statsCall)
     settings_button.place(x=510, y=10)
     stats_button.place(x=450, y=10)
     
