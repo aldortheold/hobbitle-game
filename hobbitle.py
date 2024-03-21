@@ -235,7 +235,6 @@ while True:
             count += 1
             break
 
-
     def gandalfCall():
         charCall(gandalf)
 
