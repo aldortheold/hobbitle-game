@@ -1,4 +1,5 @@
 from tkinter import *
+from colors import *
 from tkinter import messagebox
 import random
 
@@ -22,9 +23,9 @@ while True:
     window.iconphoto(True, gameLogo)
     window.resizable(False, False)
     if THEME == "LIGHT":
-        window.config(background="#f0f0f0")
+        window.config(background=bgLight)
     elif THEME == "DARK":
-        window.config(background="#111111")
+        window.config(background=bgDark)
 
     def newGame():
         window.destroy()
@@ -46,8 +47,8 @@ while True:
             rulesLabel.destroy()
             closeButton.destroy()
 
-        rulesLabel = Label(window, bg="#002b82")
-        closeButton = Button(window, bg="#002b82", activebackground="#002b82", command=closeInfo)
+        rulesLabel = Label(window, bg=widgetBlue)
+        closeButton = Button(window, bg=widgetBlue, activebackground=widgetBlue, command=closeInfo)
         if LANG == "ENG":
             rulesLabel.config(image=rules), closeButton.config(image=closeR)
         elif LANG == "RU":
@@ -61,21 +62,21 @@ while True:
     lineGroups = [lines[:5], lines[5:10], lines[10:15], lines[15:20], lines[20:25], lines[25:]]
     
     if THEME == "LIGHT":
-        aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
+        aboutButton.config(bg=bgLight, activebackground=bgLight)
         if LANG == "ENG":
-            titleLabel.config(text="HOBBITLE", bg="#f0f0f0")
+            titleLabel.config(text="HOBBITLE", bg=bgLight)
         elif LANG == "RU":
-            titleLabel.config(text="ХОББИТЛИ", bg="#f0f0f0")    
+            titleLabel.config(text="ХОББИТЛИ", bg=bgLight)    
         for field in lines:
-            field.config(bg="#f0f0f0")
+            field.config(bg=bgLight)
     elif THEME == "DARK":
-        aboutButton.config(bg="#222222", activebackground="#222222")
+        aboutButton.config(bg=widgetDark, activebackground=widgetDark)
         if LANG == "ENG":
-            titleLabel.config(text="HOBBITLE", bg="#111111")
+            titleLabel.config(text="HOBBITLE", bg=bgDark)
         elif LANG == "RU":
-            titleLabel.config(text="ХОББИТЛИ", bg="#111111")
+            titleLabel.config(text="ХОББИТЛИ", bg=bgDark)
         for field in lines:
-            field.config(bg="#222222")
+            field.config(bg=widgetDark)
 
     aboutButton.place(x=10, y=10), titleLabel.place(x=100, y=0)
 
@@ -104,7 +105,7 @@ while True:
         global ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
         congratsLabel = Label(window, width=554, height=215, bg="#179923")
         theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
-        newGameButton = Button(window, bg="#002b82", command=newGame)
+        newGameButton = Button(window, bg=widgetBlue, command=newGame)
         exitButton = Button(window, bg="#f0a510", command=quit)
         currentGuess = count // 5 - 1
         guessedCombo = guesses[currentGuess]
@@ -118,9 +119,9 @@ while True:
         if count % 5 == 0:
             if guessedCombo == solution:
                 for character in currentLine:
-                    character.config(bg="#08c700")
+                    character.config(bg=greenTile)
                 for keyButton in currentGButton:
-                    keyButton.config(bg="#08c700", activebackground="#08c700")
+                    keyButton.config(bg=greenTile, activebackground=greenTile)
                 congratsLabel.place(x=10, y=500)
                 newGameButton.place(x=62, y=610)
                 exitButton.place(x=312, y=610)
@@ -133,21 +134,21 @@ while True:
                 for character in guessedCombo:
                     if character in solution:
                         if guessedCombo.index(character) == solution.index(character):
-                            currentLine[guessedCombo.index(character)].config(bg="#08c700")
-                            currentGButton[guessedCombo.index(character)].config(bg="#08c700", activebackground="#08c700")
+                            currentLine[guessedCombo.index(character)].config(bg=greenTile)
+                            currentGButton[guessedCombo.index(character)].config(bg=greenTile, activebackground=greenTile)
                         else:
-                            currentLine[guessedCombo.index(character)].config(bg="#ffcd00")
-                            currentGButton[guessedCombo.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            currentLine[guessedCombo.index(character)].config(bg=yellowTile)
+                            currentGButton[guessedCombo.index(character)].config(bg=yellowTile, activebackground=yellowTile)
                     else:
-                        currentLine[guessedCombo.index(character)].config(bg="#9e9e9e")
-                        currentGButton[guessedCombo.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                        currentLine[guessedCombo.index(character)].config(bg=grayTile)
+                        currentGButton[guessedCombo.index(character)].config(bg=grayTile, activebackground=grayTile)
                 if count == 30:
                     theSolWasLabel.place(x=10, y=500)
-                    Label(window, image=solution[0], width=104, height=68, bg="#ff9165").place(x=28, y=550)
-                    Label(window, image=solution[1], width=104, height=68, bg="#ff9165").place(x=130, y=550)
-                    Label(window, image=solution[2], width=104, height=68, bg="#ff9165").place(x=233, y=550)
-                    Label(window, image=solution[3], width=104, height=68, bg="#ff9165").place(x=336, y=550)
-                    Label(window, image=solution[4], width=104, height=68, bg="#ff9165").place(x=439, y=550)
+                    Label(window, image=solution[0], width=104, height=68, bg=bgRed).place(x=28, y=550)
+                    Label(window, image=solution[1], width=104, height=68, bg=bgRed).place(x=130, y=550)
+                    Label(window, image=solution[2], width=104, height=68, bg=bgRed).place(x=233, y=550)
+                    Label(window, image=solution[3], width=104, height=68, bg=bgRed).place(x=336, y=550)
+                    Label(window, image=solution[4], width=104, height=68, bg=bgRed).place(x=439, y=550)
                     newGameButton.place(x=62, y=625)
                     exitButton.place(x=312, y=625)
                     ALL_TRIES += 1
@@ -208,15 +209,15 @@ while True:
 
     if THEME == "LIGHT":
         for keyButton in keyButtons:
-            keyButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
-        enterButton.config(image=enter, bg="#f0f0f0", activebackground="#f0f0f0")
-        backspaceButton.config(image=backspace, bg="#f0f0f0", activebackground="#f0f0f0")
+            keyButton.config(bg=bgLight, activebackground=bgLight)
+        enterButton.config(image=enter, bg=bgLight, activebackground=bgLight)
+        backspaceButton.config(image=backspace, bg=bgLight, activebackground=bgLight)
     
     elif THEME == "DARK":
         for keyButton in keyButtons:
-            keyButton.config(bg="#222222", activebackground="#222222")
-        enterButton.config(image=enterLight, bg="#222222", activebackground="#222222")
-        backspaceButton.config(image=backspaceLight, bg="#222222", activebackground="#222222")
+            keyButton.config(bg=widgetDark, activebackground=widgetDark)
+        enterButton.config(image=enterLight, bg=widgetDark, activebackground=widgetDark)
+        backspaceButton.config(image=backspaceLight, bg=widgetDark, activebackground=widgetDark)
     
     def russian():
         global LANG
@@ -232,29 +233,29 @@ while True:
         global THEME
         THEME = "LIGHT"
         for line in lines:
-            line.config(bg="#f0f0f0")
+            line.config(bg=bgLight)
         for keyButton in keyButtons:
-            keyButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
-        window.config(background="#f0f0f0"), titleLabel.config(bg="#f0f0f0")
-        aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
-        statsButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=stats)
-        settingsButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=settings)
-        enterButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=enter)
-        backspaceButton.config(bg="#f0f0f0", activebackground="#f0f0f0", image=backspace)
+            keyButton.config(bg=bgLight, activebackground=bgLight)
+        window.config(background=bgLight), titleLabel.config(bg=bgLight)
+        aboutButton.config(bg=bgLight, activebackground=bgLight)
+        statsButton.config(bg=bgLight, activebackground=bgLight, image=stats)
+        settingsButton.config(bg=bgLight, activebackground=bgLight, image=settings)
+        enterButton.config(bg=bgLight, activebackground=bgLight, image=enter)
+        backspaceButton.config(bg=bgLight, activebackground=bgLight, image=backspace)
 
     def darkTheme():
         global THEME
         THEME = "DARK"
         for line in lines:
-            line.config(bg="#222222")
+            line.config(bg=widgetDark)
         for keyButton in keyButtons:
-            keyButton.config(bg="#222222", activebackground="#222222")
-        window.config(background="#111111"), titleLabel.config(bg="#111111")
-        aboutButton.config(bg="#222222", activebackground="#222222")
-        statsButton.config(bg="#222222", activebackground="#222222", image=statsLight)
-        settingsButton.config(bg="#222222", activebackground="#222222", image=settingsLight)
-        enterButton.config(bg="#222222", activebackground="#222222", image=enterLight)
-        backspaceButton.config(bg="#222222", activebackground="#222222", image=backspaceLight)
+            keyButton.config(bg=widgetDark, activebackground=widgetDark)
+        window.config(background=bgDark), titleLabel.config(bg=bgDark)
+        aboutButton.config(bg=widgetDark, activebackground=widgetDark)
+        statsButton.config(bg=widgetDark, activebackground=widgetDark, image=statsLight)
+        settingsButton.config(bg=widgetDark, activebackground=widgetDark, image=settingsLight)
+        enterButton.config(bg=widgetDark, activebackground=widgetDark, image=enterLight)
+        backspaceButton.config(bg=widgetDark, activebackground=widgetDark, image=backspaceLight)
 
     def settingsCall():
 
@@ -263,12 +264,12 @@ while True:
             lightButtonB.destroy(), darkButtonB.destroy()
             russianButtonB.destroy(),englishButtonB.destroy()
 
-        settingsListLabel = Label(window, width=574, height=725, bg="#002b82")
-        closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
-        lightButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=lightTheme)
-        darkButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=darkTheme)
-        russianButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=russian)
-        englishButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=english)
+        settingsListLabel = Label(window, width=574, height=725, bg=widgetBlue)
+        closeButton = Button(window, image=closeR, bg=widgetBlue, activebackground=widgetBlue, command=closeSettings)
+        lightButtonB = Button(window, bg=widgetBlue, activebackground=widgetBlue, command=lightTheme)
+        darkButtonB = Button(window, bg=widgetBlue, activebackground=widgetBlue, command=darkTheme)
+        russianButtonB = Button(window, bg=widgetBlue, activebackground=widgetBlue, command=russian)
+        englishButtonB = Button(window, bg=widgetBlue, activebackground=widgetBlue, command=english)
         if LANG == "ENG":
             settingsListLabel.config(image=settingsList), lightButtonB.config(image=lightButton)
             darkButtonB.config(image=darkButton), russianButtonB.config(image=russianButton) 
@@ -286,37 +287,37 @@ while True:
             statsWLabel.destroy(), closeButton1.destroy()
             allTriesLabel.destroy(), percentageLabel.destroy()
             currentStreakLabel.destroy(), bestStreakLabel.destroy()
-        statsWLabel = Label(window, width=560, height=248, bg="#002b82")
+        statsWLabel = Label(window, width=560, height=248, bg=widgetBlue)
 
         if LANG == "ENG":
             statsWLabel.config(image=statsW)
         elif LANG == "RU":
             statsWLabel.config(image=statsWRu)
         statsWLabel.place(x=5, y=242)
-        closeButton1 = Button(window, image=closeSt, bg="#002b82", activebackground="#002b82", command=closeStats)
+        closeButton1 = Button(window, image=closeSt, bg=widgetBlue, activebackground=widgetBlue, command=closeStats)
         closeButton1.place(x=498, y=262)
-        allTriesLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=ALL_TRIES, font=("Bandshift", 38))
+        allTriesLabel = Label(window, bg=bgBlue, fg=widgetBlue, width=3, text=ALL_TRIES, font=("Bandshift", 38))
         allTriesLabel.place(x=44, y=348)
-        percentageLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=4, font=("Bandshift", 38))
+        percentageLabel = Label(window, bg=bgBlue, fg=widgetBlue, width=4, font=("Bandshift", 38))
         try:
             percentageLabel.config(text=f"{round((ALL_WINS / ALL_TRIES) * 100)}%")
         except ZeroDivisionError:
             percentageLabel.config(text="0%")
         percentageLabel.place(x=142, y=348)
-        currentStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=CURRENT_STREAK, font=("Bandshift", 38))
+        currentStreakLabel = Label(window, bg=bgBlue, fg=widgetBlue, width=3, text=CURRENT_STREAK, font=("Bandshift", 38))
         currentStreakLabel.place(x=280, y=348)
-        bestStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=BEST_STREAK, font=("Bandshift", 38))
+        bestStreakLabel = Label(window, bg=bgBlue, fg=widgetBlue, width=3, text=BEST_STREAK, font=("Bandshift", 38))
         bestStreakLabel.place(x=420, y=348)
     
     settingsButton = Button(window, width=50, height=50, command=settingsCall)
     statsButton = Button(window, width=50, height=50, command=statsCall)
     
     if THEME == "LIGHT":
-        settingsButton.config(image=settings, bg="#f0f0f0", activebackground="#f0f0f0")
-        statsButton.config(image=stats, bg="#f0f0f0", activebackground="#f0f0f0")
+        settingsButton.config(image=settings, bg=bgLight, activebackground=bgLight)
+        statsButton.config(image=stats, bg=bgLight, activebackground=bgLight)
     elif THEME == "DARK":
-        settingsButton.config(image=settingsLight, bg="#222222", activebackground="#222222")
-        statsButton.config(image=statsLight, bg="#222222", activebackground="#222222")
+        settingsButton.config(image=settingsLight, bg=widgetDark, activebackground=widgetDark)
+        statsButton.config(image=statsLight, bg=widgetDark, activebackground=widgetDark)
 
     settingsButton.place(x=510, y=10), statsButton.place(x=450, y=10)
     
