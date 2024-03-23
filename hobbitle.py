@@ -19,7 +19,7 @@ while True:
     elif LANG == "RU":
         window.title("Хоббитли")
     window.iconphoto(True, PhotoImage(file="img/logo.png"))
-    window.resizable(False, False)
+    # window.resizable(False, False)
     if THEME == "LIGHT":
         window.config(background="#f0f0f0")
     elif THEME == "DARK":
@@ -104,19 +104,18 @@ while True:
     congratsListRu = [awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu]
     congratsRu = random.choice(congratsListRu)
 
-    def closeInfo():
-        global rulesLabel, closeButton
-        rulesLabel.destroy()
-        closeButton.destroy()
-
     def rulesCall():
-        global rulesLabel, closeButton
+
+        def closeInfo():
+            rulesLabel.destroy()
+            closeButton.destroy()
+
+        rulesLabel = Label(window, bg="#002b82")
+        closeButton = Button(window, bg="#002b82", activebackground="#002b82", command=closeInfo)
         if LANG == "ENG":
-            rulesLabel = Label(window, image=rules, bg="#002b82")
-            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeInfo)
+            rulesLabel.config(image=rules), closeButton.config(image=closeR)
         elif LANG == "RU":
-            rulesLabel = Label(window, image=rulesRu, bg="#002b82")
-            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeInfo)
+            rulesLabel.config(image=rulesRu), closeButton.config(image=closeR)
         rulesLabel.place(x=0, y=0), closeButton.place(x=494, y=18)
 
     aboutButton = Button(window, width=50, height=50, image=logo, command=rulesCall)
@@ -183,16 +182,18 @@ while True:
             field.config(bg="#222222")
 
     aboutButton.place(x=10, y=10), titleLabel.place(x=100, y=0)
-    l1.place(x=10, y=70), l2.place(x=120, y=70), l3.place(x=230, y=70), l4.place(x=340, y=70), l5.place(x=450, y=70)
-    l6.place(x=10, y=140), l7.place(x=120, y=140), l8.place(x=230, y=140), l9.place(x=340, y=140), l10.place(x=450, y=140)
-    l11.place(x=10, y=210), l12.place(x=120, y=210), l13.place(x=230, y=210), l14.place(x=340, y=210), l15.place(x=450, y=210)
-    l16.place(x=10, y=280), l17.place(x=120, y=280), l18.place(x=230, y=280), l19.place(x=340, y=280), l20.place(x=450, y=280)
-    l21.place(x=10, y=350), l22.place(x=120, y=350), l23.place(x=230, y=350), l24.place(x=340, y=350), l25.place(x=450, y=350)
-    l26.place(x=10, y=420), l27.place(x=120, y=420), l28.place(x=230, y=420), l29.place(x=340, y=420), l30.place(x=450, y=420)
+
+    xPlace, yPlace = 10, 70
+    for yAxis in range(6):
+        for xAxis in range(1, 6):
+            lines[xAxis + yAxis * 5 - 1].place(x=xPlace, y=yPlace)
+            xPlace += 110
+        xPlace = 10
+        yPlace += 70
 
     count = 0
 
-    def charCall(char):
+    def charCall(char: PhotoImage):
         global count, guesses, gButtons, guess6, g6B, keyButtons, keyboard
         while count < 30:
             lines[count].config(image=char)
@@ -248,18 +249,18 @@ while True:
         charCall(smaug)
 
     def enterCall():
-        global count, guess1, guess2, guess3, guess4, guess5, guess6, congratsLabel, theSolWasLabel
-        global newGameButton, exitButton, ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
+        global count, guess1, guess2, guess3, guess4, guess5, guess6
+        global ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
+        congratsLabel = Label(window, width=554, height=215, bg="#179923")
+        theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
+        newGameButton = Button(window, bg="#002b82", command=newGame)
+        exitButton = Button(window, bg="#f0a510", command=quit)
         if LANG == "ENG":
-            congratsLabel = Label(window, image=congrats, width=554, height=215, bg="#179923")
-            theSolWasLabel = Label(window, image=theSolWas, width=554, height=215, bg="#9a0000")
-            newGameButton = Button(window, image=playAgain, bg="#002b82", command=newGame)
-            exitButton = Button(window, image=imgExit, bg="#f0a510", command=quit)
+            congratsLabel.config(image=congrats), theSolWasLabel.config(image=theSolWas)
+            newGameButton.config(image=playAgain), exitButton.config(image=imgExit)
         elif LANG == "RU":
-            congratsLabel = Label(window, image=congratsRu, width=554, height=215, bg="#179923")
-            theSolWasLabel = Label(window, image=theSolWasRu, width=554, height=215, bg="#9a0000")
-            newGameButton = Button(window, image=playAgainRu, bg="#002b82", command=newGame)
-            exitButton = Button(window, image=imgExitRu, bg="#f0a510", command=quit)
+            congratsLabel.config(image=congratsRu), theSolWasLabel.config(image=theSolWasRu)
+            newGameButton.config(image=playAgainRu), exitButton.config(image=imgExitRu)
         if count == 5:
             if guess1 == solution:
                 for character in line1:
@@ -486,15 +487,6 @@ while True:
             keyButton.config(bg="#222222", activebackground="#222222")
         enterButton.config(image=enterLight, bg="#222222", activebackground="#222222")
         backspaceButton.config(image=backspaceLight, bg="#222222", activebackground="#222222")
-
-    def closeSettings():
-        global settingsListLabel, closeButton, lightButtonB, darkButtonB, englishButtonB, russianButtonB
-        settingsListLabel.destroy()
-        closeButton.destroy()
-        lightButtonB.destroy()
-        darkButtonB.destroy()
-        russianButtonB.destroy()
-        englishButtonB.destroy()
     
     def russian():
         global LANG
@@ -535,39 +527,41 @@ while True:
         backspaceButton.config(bg="#222222", activebackground="#222222", image=backspaceLight)
 
     def settingsCall():
-        global settingsListLabel, closeButton, lightButtonB, darkButtonB, englishButtonB, russianButtonB
+
+        def closeSettings():
+            settingsListLabel.destroy(), closeButton.destroy()
+            lightButtonB.destroy(), darkButtonB.destroy()
+            russianButtonB.destroy(),englishButtonB.destroy()
+
+        settingsListLabel = Label(window, width=574, height=725, bg="#002b82")
+        closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
+        lightButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=lightTheme)
+        darkButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=darkTheme)
+        russianButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=russian)
+        englishButtonB = Button(window, bg="#002b82", activebackground="#002b82", command=english)
         if LANG == "ENG":
-            settingsListLabel = Label(window, image=settingsList, width=574, height=725, bg="#002b82")
-            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
-            lightButtonB = Button(window, image=lightButton, bg="#002b82", activebackground="#002b82", command=lightTheme)
-            darkButtonB = Button(window, image=darkButton, bg="#002b82", activebackground="#002b82", command=darkTheme)
-            russianButtonB = Button(window, image=russianButton, bg="#002b82", activebackground="#002b82", command=russian)
-            englishButtonB = Button(window, image=englishButton, bg="#002b82", activebackground="#002b82", command=english)
+            settingsListLabel.config(image=settingsList), lightButtonB.config(image=lightButton)
+            darkButtonB.config(image=darkButton), russianButtonB.config(image=russianButton) 
+            englishButtonB.config(image=englishButton)
         elif LANG == "RU":
-            settingsListLabel = Label(window, image=settingsListRu, width=574, height=725, bg="#002b82")
-            closeButton = Button(window, image=closeR, bg="#002b82", activebackground="#002b82", command=closeSettings)
-            lightButtonB = Button(window, image=lightButtonRu, bg="#002b82", activebackground="#002b82", command=lightTheme)
-            darkButtonB = Button(window, image=darkButtonRu, bg="#002b82", activebackground="#002b82", command=darkTheme)
-            russianButtonB = Button(window, image=russianButtonRu, bg="#002b82", activebackground="#002b82", command=russian) 
-            englishButtonB = Button(window, image=englishButtonRu, bg="#002b82", activebackground="#002b82", command=english)
+            settingsListLabel.config(image=settingsListRu), lightButtonB.config(image=lightButtonRu)
+            darkButtonB.config(image=darkButtonRu), russianButtonB.config(image=russianButtonRu) 
+            englishButtonB.config(image=englishButtonRu)
         settingsListLabel.place(x=0, y=0), closeButton.place(x=494, y=18), lightButtonB.place(x=300, y=220),
         darkButtonB.place(x=300, y=300), russianButtonB.place(x=300, y=410), englishButtonB.place(x=300, y=490)
 
-    def closeStats():
-        global statsWLabel, closeButton1, allTriesLabel, percentageLabel, currentStreakLabel, bestStreakLabel
-        statsWLabel.destroy()
-        closeButton1.destroy()
-        allTriesLabel.destroy()
-        percentageLabel.destroy()
-        currentStreakLabel.destroy()
-        bestStreakLabel.destroy()
-
     def statsCall():
-        global LANG, statsWLabel, closeButton1, allTriesLabel, percentageLabel, currentStreakLabel, bestStreakLabel
+
+        def closeStats():
+            statsWLabel.destroy(), closeButton1.destroy()
+            allTriesLabel.destroy(), percentageLabel.destroy()
+            currentStreakLabel.destroy(), bestStreakLabel.destroy()
+        statsWLabel = Label(window, width=560, height=248, bg="#002b82")
+
         if LANG == "ENG":
-            statsWLabel = Label(window, image=statsW, width=560, height=248, bg="#002b82")
+            statsWLabel.config(image=statsW)
         elif LANG == "RU":
-            statsWLabel = Label(window, image=statsWRu, width=560, height=248, bg="#002b82")
+            statsWLabel.config(image=statsWRu)
         statsWLabel.place(x=5, y=242)
         closeButton1 = Button(window, image=closeSt, bg="#002b82", activebackground="#002b82", command=closeStats)
         closeButton1.place(x=498, y=262)
@@ -589,14 +583,15 @@ while True:
         currentStreakLabel.place(x=280, y=348)
         bestStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=BEST_STREAK, font=("Bandshift", 38))
         bestStreakLabel.place(x=420, y=348)
-
+    
+    settingsButton = Button(window, width=50, height=50, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
+    statsButton = Button(window, width=50, height=50, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
+    
     if THEME == "LIGHT":
-        settingsButton = Button(window, width=50, height=50, image=settings, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
-        statsButton = Button(window, width=50, height=50, image=stats, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
+        settingsButton.config(image=settings), statsButton.config(image=stats)
     elif THEME == "DARK":
-        settingsButton = Button(window, width=50, height=50, image=settingsLight, command=settingsCall, bg="#222222", activebackground="#222222")
-        statsButton = Button(window, width=50, height=50, image=statsLight, bg="#222222", activebackground="#222222", command=statsCall)
-    settingsButton.place(x=510, y=10)
-    statsButton.place(x=450, y=10)
+        settingsButton.config(image=settingsLight), statsButton.config(image=statsLight)
+
+    settingsButton.place(x=510, y=10), statsButton.place(x=450, y=10)
     
     window.mainloop()
