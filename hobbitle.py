@@ -91,11 +91,8 @@ while True:
         gloin, fili, kili, troll, gollum, greatGoblin, smaug
     ]
     solution = random.sample(keyboard, 5)
-    guess1, guess2, guess3, guess4, guess5, guess6 = [], [], [], [], [], []
-    g1B, g2B, g3B, g4B, g5B, g6B = [], [], [], [], [], []
 
-    guesses = [guess1, guess2, guess3, guess4, guess5, guess6]
-    gButtons = [g1B, g2B, g3B, g4B, g5B, g6B]
+    guesses, gButtons = [[], [], [], [], [], []], [[], [], [], [], [], []]
 
     congrats = random.choice([awesome, excellent, greatJob, outstanding, wellDone])
     congratsRu = random.choice([awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu])
@@ -118,9 +115,7 @@ while True:
     titleLabel = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), fg="#daaf00")
 
     lines = [Label(window, width=110, height=70, image=label, relief=RAISED) for _ in range(30)]
-
-    line1, line2, line3 = lines[:5], lines[5:10], lines[10:15]
-    line4, line5, line6 = lines[15:20], lines[20:25], lines[25:]
+    lineGroups = [lines[:5], lines[5:10], lines[10:15], lines[15:20], lines[20:25], lines[25:]]
     
     if THEME == "LIGHT":
         aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
@@ -152,36 +147,36 @@ while True:
     count = 0
 
     def charCall(char: PhotoImage):
-        global count, guesses, gButtons, guess6, g6B, keyButtons, keyboard
+        global count, guesses, gButtons, keyButtons, keyboard
+        currentGuess = min(count // 5, 5)
         while count < 30:
             lines[count].config(image=char)
-            if count != 30:
-                guesses[count // 5].append(char)
-                gButtons[count // 5].append(keyButtons[keyboard.index(char)])
-            else:
-                guess6.append(char)
-                g6B.append(keyButtons[keyboard.index(char)])
+            guesses[currentGuess].append(char)
+            gButtons[currentGuess].append(keyButtons[keyboard.index(char)])
             count += 1
             break
 
     def enterCall():
-        global count, guess1, guess2, guess3, guess4, guess5, guess6
+        global count, lineGroups, guesses, gButtons
         global ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
         congratsLabel = Label(window, width=554, height=215, bg="#179923")
         theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
         newGameButton = Button(window, bg="#002b82", command=newGame)
         exitButton = Button(window, bg="#f0a510", command=quit)
+        currentGuess = count // 5 - 1
+        guessedCombo = guesses[currentGuess]
+        currentLine, currentGButton = lineGroups[currentGuess], gButtons[currentGuess]
         if LANG == "ENG":
             congratsLabel.config(image=congrats), theSolWasLabel.config(image=theSolWas)
             newGameButton.config(image=playAgain), exitButton.config(image=imgExit)
         elif LANG == "RU":
             congratsLabel.config(image=congratsRu), theSolWasLabel.config(image=theSolWasRu)
             newGameButton.config(image=playAgainRu), exitButton.config(image=imgExitRu)
-        if count == 5:
-            if guess1 == solution:
-                for character in line1:
+        if count % 5 == 0:
+            if guessedCombo == solution:
+                for character in currentLine:
                     character.config(bg="#08c700")
-                for keyButton in g1B:
+                for keyButton in currentGButton:
                     keyButton.config(bg="#08c700", activebackground="#08c700")
                 congratsLabel.place(x=10, y=500)
                 newGameButton.place(x=62, y=610)
@@ -192,172 +187,40 @@ while True:
                 STREAKS.append(CURRENT_STREAK)
                 BEST_STREAK = max(STREAKS)
             else:
-                for character in guess1:
+                for character in guessedCombo:
                     if character in solution:
-                        if guess1.index(character) == solution.index(character):
-                            line1[guess1.index(character)].config(bg="#08c700")
-                            g1B[guess1.index(character)].config(bg="#08c700", activebackground="#08c700")
+                        if guessedCombo.index(character) == solution.index(character):
+                            currentLine[guessedCombo.index(character)].config(bg="#08c700")
+                            currentGButton[guessedCombo.index(character)].config(bg="#08c700", activebackground="#08c700")
                         else:
-                            line1[guess1.index(character)].config(bg="#ffcd00")
-                            g1B[guess1.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
+                            currentLine[guessedCombo.index(character)].config(bg="#ffcd00")
+                            currentGButton[guessedCombo.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
                     else:
-                        line1[guess1.index(character)].config(bg="#9e9e9e")
-                        g1B[guess1.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-        elif count == 10:
-            if guess2 == solution:
-                for character in line2:
-                    character.config(bg="#08c700")
-                for keyButton in g2B:
-                    keyButton.config(bg="#08c700", activebackground="#08c700")
-                congratsLabel.place(x=10, y=500)
-                newGameButton.place(x=62, y=610)
-                exitButton.place(x=312, y=610)
-                ALL_TRIES += 1
-                ALL_WINS += 1
-                CURRENT_STREAK += 1
-                STREAKS.append(CURRENT_STREAK)
-                BEST_STREAK = max(STREAKS)
-            else:
-                for character in guess2:
-                    if character in solution:
-                        if guess2.index(character) == solution.index(character):
-                            line2[guess2.index(character)].config(bg="#08c700")
-                            g2B[guess2.index(character)].config(bg="#08c700", activebackground="#08c700")
-                        else:
-                            line2[guess2.index(character)].config(bg="#ffcd00")
-                            g2B[guess2.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
-                    else:
-                        line2[guess2.index(character)].config(bg="#9e9e9e")
-                        g2B[guess2.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-        elif count == 15:
-            if guess3 == solution:
-                for character in line3:
-                    character.config(bg="#08c700")
-                for keyButton in g3B:
-                    keyButton.config(bg="#08c700", activebackground="#08c700")
-                congratsLabel.place(x=10, y=500)
-                newGameButton.place(x=62, y=610)
-                exitButton.place(x=312, y=610)
-                ALL_TRIES += 1
-                ALL_WINS += 1
-                CURRENT_STREAK += 1
-                STREAKS.append(CURRENT_STREAK)
-                BEST_STREAK = max(STREAKS)
-            else:
-                for character in guess3:
-                    if character in solution:
-                        if guess3.index(character) == solution.index(character):
-                            line3[guess3.index(character)].config(bg="#08c700")
-                            g3B[guess3.index(character)].config(bg="#08c700", activebackground="#08c700")
-                        else:
-                            line3[guess3.index(character)].config(bg="#ffcd00")
-                            g3B[guess3.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
-                    else:
-                        line3[guess3.index(character)].config(bg="#9e9e9e")
-                        g3B[guess3.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-        elif count == 20:
-            if guess4 == solution:
-                for character in line4:
-                    character.config(bg="#08c700")
-                for keyButton in g4B:
-                    keyButton.config(bg="#08c700", activebackground="#08c700")
-                congratsLabel.place(x=10, y=500)
-                newGameButton.place(x=62, y=610)
-                exitButton.place(x=312, y=610)
-                ALL_TRIES += 1
-                ALL_WINS += 1
-                CURRENT_STREAK += 1
-                STREAKS.append(CURRENT_STREAK)
-                BEST_STREAK = max(STREAKS)
-            else:
-                for character in guess4:
-                    if character in solution:
-                        if guess4.index(character) == solution.index(character):
-                            line4[guess4.index(character)].config(bg="#08c700")
-                            g4B[guess4.index(character)].config(bg="#08c700", activebackground="#08c700")
-                        else:
-                            line4[guess4.index(character)].config(bg="#ffcd00")
-                            g4B[guess4.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
-                    else:
-                        line4[guess4.index(character)].config(bg="#9e9e9e")
-                        g4B[guess4.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-        elif count == 25:
-            if guess5 == solution:
-                for character in line5:
-                    character.config(bg="#08c700")
-                for keyButton in g5B:
-                    keyButton.config(bg="#08c700", activebackground="#08c700")
-                congratsLabel.place(x=10, y=500)
-                newGameButton.place(x=62, y=610)
-                exitButton.place(x=312, y=610)
-                ALL_TRIES += 1
-                ALL_WINS += 1
-                CURRENT_STREAK += 1
-                STREAKS.append(CURRENT_STREAK)
-                BEST_STREAK = max(STREAKS)
-            else:
-                for character in guess5:
-                    if character in solution:
-                        if guess5.index(character) == solution.index(character):
-                            line5[guess5.index(character)].config(bg="#08c700")
-                            g5B[guess5.index(character)].config(bg="#08c700", activebackground="#08c700")
-                        else:
-                            line5[guess5.index(character)].config(bg="#ffcd00")
-                            g5B[guess5.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
-                    else:
-                        line5[guess5.index(character)].config(bg="#9e9e9e")
-                        g5B[guess5.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-        elif count == 30:
-            if guess6 == solution:
-                for character in line6:
-                    character.config(bg="#08c700")
-                for keyButton in g6B:
-                        keyButton.config(bg="#08c700", activebackground="#08c700")
-                congratsLabel.place(x=10, y=500)
-                newGameButton.place(x=62, y=610)
-                exitButton.place(x=312, y=610)
-                ALL_TRIES += 1
-                ALL_WINS += 1
-                CURRENT_STREAK += 1
-                STREAKS.append(CURRENT_STREAK)
-                BEST_STREAK = max(STREAKS)
-            else:
-                for character in guess6:
-                    if character in solution:
-                        if guess6.index(character) == solution.index(character):
-                            line6[guess6.index(character)].config(bg="#08c700")
-                            g6B[guess6.index(character)].config(bg="#08c700", activebackground="#08c700")
-                        else:
-                            line6[guess6.index(character)].config(bg="#ffcd00")
-                            g6B[guess6.index(character)].config(bg="#ffcd00", activebackground="#ffcd00")
-                    else:
-                        line6[guess6.index(character)].config(bg="#9e9e9e")
-                        g6B[guess6.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
-                theSolWasLabel.place(x=10, y=500)
-                Label(window, image=solution[0], width=104, height=68, bg="#ff9165").place(x=28, y=550)
-                Label(window, image=solution[1], width=104, height=68, bg="#ff9165").place(x=130, y=550)
-                Label(window, image=solution[2], width=104, height=68, bg="#ff9165").place(x=233, y=550)
-                Label(window, image=solution[3], width=104, height=68, bg="#ff9165").place(x=336, y=550)
-                Label(window, image=solution[4], width=104, height=68, bg="#ff9165").place(x=439, y=550)
-                newGameButton.place(x=62, y=625)
-                exitButton.place(x=312, y=625)
-                ALL_TRIES += 1
-                CURRENT_STREAK = 0
+                        currentLine[guessedCombo.index(character)].config(bg="#9e9e9e")
+                        currentGButton[guessedCombo.index(character)].config(bg="#9e9e9e", activebackground="#9e9e9e")
+                if count == 30:
+                    theSolWasLabel.place(x=10, y=500)
+                    Label(window, image=solution[0], width=104, height=68, bg="#ff9165").place(x=28, y=550)
+                    Label(window, image=solution[1], width=104, height=68, bg="#ff9165").place(x=130, y=550)
+                    Label(window, image=solution[2], width=104, height=68, bg="#ff9165").place(x=233, y=550)
+                    Label(window, image=solution[3], width=104, height=68, bg="#ff9165").place(x=336, y=550)
+                    Label(window, image=solution[4], width=104, height=68, bg="#ff9165").place(x=439, y=550)
+                    newGameButton.place(x=62, y=625)
+                    exitButton.place(x=312, y=625)
+                    ALL_TRIES += 1
+                    CURRENT_STREAK = 0
 
     def backspaceCall():
-        global count, guesses, gButtons, guess6, g6B
+        global count, guesses, gButtons
+        currentGuess = min(count // 5, 5)
         try:
             while count > 0:
                 lines[count - 1].config(image=label)
-                if count != 30:
-                    guesses[count // 5].remove(guesses[count // 5][-1])
-                    gButtons[count // 5].remove(gButtons[count // 5][-1])
-                else:
-                    guess6.remove(guess6[-1])
-                    g6B.remove(g6B[-1])
+                guesses[currentGuess].remove(guesses[currentGuess][-1])
+                gButtons[currentGuess].remove(gButtons[currentGuess][-1])
                 count -= 1
                 break
-        except Exception:
+        except IndexError:
             if LANG == "ENG":
                 errorQuit = messagebox.askokcancel(title="Unexpected error!", message="Unexpected error occurred while deleting the character. Would you like to restart the game?")
             elif LANG == "RU":
