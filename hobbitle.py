@@ -19,7 +19,7 @@ while True:
     elif LANG == "RU":
         window.title("Хоббитли")
     window.iconphoto(True, PhotoImage(file="img/logo.png"))
-    # window.resizable(False, False)
+    window.resizable(False, False)
     if THEME == "LIGHT":
         window.config(background="#f0f0f0")
     elif THEME == "DARK":
@@ -86,23 +86,19 @@ while True:
     greatGoblin = PhotoImage(file="img/great_goblin.png")
     smaug = PhotoImage(file="img/smaug.png")
 
-    keyboard = [gandalf, bilbo, thorin, elrond, beorn, balin, dwalin, gloin, fili, kili, troll, gollum, greatGoblin, smaug]
+    keyboard = [
+        gandalf, bilbo, thorin, elrond, beorn, balin, dwalin,
+        gloin, fili, kili, troll, gollum, greatGoblin, smaug
+    ]
     solution = random.sample(keyboard, 5)
-    guess1, g1B = [], []
-    guess2, g2B = [], []
-    guess3, g3B = [], []
-    guess4, g4B = [], []
-    guess5, g5B = [], []
-    guess6, g6B = [], []
+    guess1, guess2, guess3, guess4, guess5, guess6 = [], [], [], [], [], []
+    g1B, g2B, g3B, g4B, g5B, g6B = [], [], [], [], [], []
 
     guesses = [guess1, guess2, guess3, guess4, guess5, guess6]
     gButtons = [g1B, g2B, g3B, g4B, g5B, g6B]
 
-    congratsList = [awesome, excellent, greatJob, outstanding, wellDone]
-    congrats = random.choice(congratsList)
-
-    congratsListRu = [awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu]
-    congratsRu = random.choice(congratsListRu)
+    congrats = random.choice([awesome, excellent, greatJob, outstanding, wellDone])
+    congratsRu = random.choice([awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu])
 
     def rulesCall():
 
@@ -121,48 +117,10 @@ while True:
     aboutButton = Button(window, width=50, height=50, image=logo, command=rulesCall)
     titleLabel = Label(window, text="HOBBITLE", font=("Courier New", 50, "bold"), fg="#daaf00")
 
-    l1 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l2 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l3 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l4 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l5 = Label(window, width=110, height=70, image=label, relief=RAISED)
+    lines = [Label(window, width=110, height=70, image=label, relief=RAISED) for _ in range(30)]
 
-    l6 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l7 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l8 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l9 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l10 = Label(window, width=110, height=70, image=label, relief=RAISED)
-
-    l11 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l12 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l13 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l14 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l15 = Label(window, width=110, height=70, image=label, relief=RAISED)
-
-    l16 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l17 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l18 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l19 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l20 = Label(window, width=110, height=70, image=label, relief=RAISED)
-
-    l21 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l22 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l23 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l24 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l25 = Label(window, width=110, height=70, image=label, relief=RAISED)
-
-    l26 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l27 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l28 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l29 = Label(window, width=110, height=70, image=label, relief=RAISED)
-    l30 = Label(window, width=110, height=70, image=label, relief=RAISED)
-
-    line1, line2 = [l1, l2, l3, l4, l5], [l6, l7, l8, l9, l10]
-    line3, line4 = [l11, l12, l13, l14, l15], [l16, l17, l18, l19, l20]
-    line5, line6 = [l21, l22, l23, l24, l25], [l26, l27, l28, l29, l30]
-
-    lines = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16,
-            l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30]
+    line1, line2, line3 = lines[:5], lines[5:10], lines[10:15]
+    line4, line5, line6 = lines[15:20], lines[20:25], lines[25:]
     
     if THEME == "LIGHT":
         aboutButton.config(bg="#f0f0f0", activebackground="#f0f0f0")
@@ -205,48 +163,6 @@ while True:
                 g6B.append(keyButtons[keyboard.index(char)])
             count += 1
             break
-
-    def gandalfCall():
-        charCall(gandalf)
-
-    def bilboCall():
-        charCall(bilbo)
-
-    def thorinCall():
-        charCall(thorin)
-
-    def elrondCall():
-        charCall(elrond)
-
-    def beornCall():
-        charCall(beorn)
-
-    def balinCall():
-        charCall(balin)
-
-    def dwalinCall():
-        charCall(dwalin)
-
-    def gloinCall():
-        charCall(gloin)
-
-    def filiCall():
-        charCall(fili)
-
-    def kiliCall():
-        charCall(kili)
-
-    def trollCall():
-        charCall(troll)
-
-    def gollumCall():
-        charCall(gollum)
-
-    def greatGoblinCall():
-        charCall(greatGoblin)
-
-    def smaugCall():
-        charCall(smaug)
 
     def enterCall():
         global count, guess1, guess2, guess3, guess4, guess5, guess6
@@ -449,21 +365,21 @@ while True:
             if errorQuit:
                 window.destroy()
 
-    gandalfButton = Button(window, width=110, height=70, image=gandalf, command=gandalfCall)
-    bilboButton = Button(window, width=110, height=70, image=bilbo, command=bilboCall)
-    thorinButton = Button(window, width=110, height=70, image=thorin, command=thorinCall)
-    elrondButton = Button(window, width=110, height=70, image=elrond, command=elrondCall)
-    beornButton = Button(window, width=110, height=70, image=beorn, command=beornCall)
-    balinButton = Button(window, width=110, height=70, image=balin, command=balinCall)
-    dwalinButton = Button(window, width=110, height=70, image=dwalin, command=dwalinCall)
-    gloinButton = Button(window, width=110, height=70, image=gloin, command=gloinCall)
-    filiButton = Button(window, width=110, height=70, image=fili, command=filiCall)
-    kiliButton = Button(window, width=110, height=70, image=kili, command=kiliCall)
+    gandalfButton = Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf))
+    bilboButton = Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo))
+    thorinButton = Button(window, width=110, height=70, image=thorin, command=lambda: charCall(thorin))
+    elrondButton = Button(window, width=110, height=70, image=elrond, command=lambda: charCall(elrond))
+    beornButton = Button(window, width=110, height=70, image=beorn, command=lambda: charCall(beorn))
+    balinButton = Button(window, width=110, height=70, image=balin, command=lambda: charCall(balin))
+    dwalinButton = Button(window, width=110, height=70, image=dwalin, command=lambda: charCall(dwalin))
+    gloinButton = Button(window, width=110, height=70, image=gloin, command=lambda: charCall(gloin))
+    filiButton = Button(window, width=110, height=70, image=fili, command=lambda: charCall(fili))
+    kiliButton = Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili))
     enterButton = Button(window, width=55, height=70, image=enter, command=enterCall)
-    trollButton = Button(window, width=110, height=70, image=troll, command=trollCall)
-    gollumButton = Button(window, width=110, height=70, image=gollum, command=gollumCall)
-    greatGoblinButton = Button(window, width=110, height=70, image=greatGoblin, command=greatGoblinCall)
-    smaugButton = Button(window, width=110, height=70, image=smaug, command=smaugCall)
+    trollButton = Button(window, width=110, height=70, image=troll, command=lambda: charCall(troll))
+    gollumButton = Button(window, width=110, height=70, image=gollum, command=lambda: charCall(gollum))
+    greatGoblinButton = Button(window, width=110, height=70, image=greatGoblin, command=lambda: charCall(greatGoblin))
+    smaugButton = Button(window, width=110, height=70, image=smaug, command=lambda: charCall(smaug))
     backspaceButton = Button(window, width=55, height=70, image=backspace, command=backspaceCall)
     
     gandalfButton.place(x=10, y=500), bilboButton.place(x=120, y=500), thorinButton.place(x=230, y=500)
@@ -473,8 +389,10 @@ while True:
     gollumButton.place(x=175, y=640), greatGoblinButton.place(x=285, y=640), smaugButton.place(x=395, y=640)
     backspaceButton.place(x=505, y=640)
 
-    keyButtons = [gandalfButton, bilboButton, thorinButton, elrondButton, beornButton, balinButton, dwalinButton,
-                  gloinButton, filiButton, kiliButton, trollButton, gollumButton, greatGoblinButton, smaugButton]
+    keyButtons = [
+        gandalfButton, bilboButton, thorinButton, elrondButton, beornButton, balinButton, dwalinButton,
+        gloinButton, filiButton, kiliButton, trollButton, gollumButton, greatGoblinButton, smaugButton
+    ]
 
     if THEME == "LIGHT":
         for keyButton in keyButtons:
@@ -584,13 +502,15 @@ while True:
         bestStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=BEST_STREAK, font=("Bandshift", 38))
         bestStreakLabel.place(x=420, y=348)
     
-    settingsButton = Button(window, width=50, height=50, command=settingsCall, bg="#f0f0f0", activebackground="#f0f0f0")
-    statsButton = Button(window, width=50, height=50, bg="#f0f0f0", activebackground="#f0f0f0", command=statsCall)
+    settingsButton = Button(window, width=50, height=50, command=settingsCall)
+    statsButton = Button(window, width=50, height=50, command=statsCall)
     
     if THEME == "LIGHT":
-        settingsButton.config(image=settings), statsButton.config(image=stats)
+        settingsButton.config(image=settings, bg="#f0f0f0", activebackground="#f0f0f0")
+        statsButton.config(image=stats, bg="#f0f0f0", activebackground="#f0f0f0")
     elif THEME == "DARK":
-        settingsButton.config(image=settingsLight), statsButton.config(image=statsLight)
+        settingsButton.config(image=settingsLight, bg="#222222", activebackground="#222222")
+        statsButton.config(image=statsLight, bg="#222222", activebackground="#222222")
 
     settingsButton.place(x=510, y=10), statsButton.place(x=450, y=10)
     
