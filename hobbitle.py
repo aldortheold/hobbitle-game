@@ -348,17 +348,11 @@ while True:
         closeButton1.place(x=498, y=262)
         allTriesLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=ALL_TRIES, font=("Bandshift", 38))
         allTriesLabel.place(x=44, y=348)
+        percentageLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=4, font=("Bandshift", 38))
         try:
-            percentageLabel = Label(
-                window, bg="#bdd7ee", fg="#002b82", width=4,
-                text=f"{round((ALL_WINS / ALL_TRIES) * 100)}%",
-                font=("Bandshift", 38)
-            )
+            percentageLabel.config(text=f"{round((ALL_WINS / ALL_TRIES) * 100)}%")
         except ZeroDivisionError:
-            percentageLabel = Label(
-                window, bg="#bdd7ee", fg="#002b82",
-                width=4, text="0%", font=("Bandshift", 38)
-            )
+            percentageLabel.config(text="0%")
         percentageLabel.place(x=142, y=348)
         currentStreakLabel = Label(window, bg="#bdd7ee", fg="#002b82", width=3, text=CURRENT_STREAK, font=("Bandshift", 38))
         currentStreakLabel.place(x=280, y=348)
