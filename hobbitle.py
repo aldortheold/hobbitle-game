@@ -3,7 +3,7 @@ from tkinter import messagebox
 import random
 
 LANG = "ENG"
-THEME = "DARK"
+THEME = "LIGHT"
 
 ALL_TRIES = 0
 ALL_WINS = 0
