@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import messagebox
 import random
 
 LANG = "ENG"
@@ -93,9 +92,6 @@ while True:
     greatGoblin = PhotoImage(file="img/great_goblin.png")
     smaug = PhotoImage(file="img/smaug.png")
 
-    def newGame():
-        window.destroy()
-
     keyboard = [
         gandalf, bilbo, thorin, elrond, beorn, balin, dwalin,
         gloin, fili, kili, troll, gollum, greatGoblin, smaug
@@ -157,7 +153,7 @@ while True:
     count = 0
 
     def charCall(char: PhotoImage):
-        global count, guesses, gButtons, keyButtons, keyboard
+        global count
         currentGuess = min(count // 5, 5)
         while count < 30:
             lines[count].config(image=char)
@@ -167,19 +163,15 @@ while True:
             break
 
     def enterCall():
-        global count, lineGroups, guesses, gButtons
-        global ALL_TRIES, ALL_WINS, STREAKS, CURRENT_STREAK, BEST_STREAK
-        congratsLabel = Label(window, width=554, height=215, bg="#179923")
-        theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
-        newGameButton = Button(window, bg=WIDGET_BLUE, command=newGame)
-        exitButton = Button(window, bg="#f0a510", command=quit)
+        global count, ALL_TRIES, ALL_WINS, CURRENT_STREAK, BEST_STREAK
+        congratsLabel = Label(window, width=554, height=215, bg="#179923", image=congrats)
+        theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000", image=theSolWas)
+        newGameButton = Button(window, bg=WIDGET_BLUE, command=lambda: window.destroy(), image=playAgain)
+        exitButton = Button(window, bg="#f0a510", command=quit, image=imgExit)
         currentGuess = count // 5 - 1
         guessedCombo = guesses[currentGuess]
         currentLine, currentGButton = lineGroups[currentGuess], gButtons[currentGuess]
-        if LANG == "ENG":
-            congratsLabel.config(image=congrats), theSolWasLabel.config(image=theSolWas)
-            newGameButton.config(image=playAgain), exitButton.config(image=imgExit)
-        elif LANG == "RU":
+        if LANG == "RU":
             congratsLabel.config(image=congratsRu), theSolWasLabel.config(image=theSolWasRu)
             newGameButton.config(image=playAgainRu), exitButton.config(image=imgExitRu)
         if count % 5 == 0:
@@ -221,28 +213,16 @@ while True:
                     CURRENT_STREAK = 0
 
     def backspaceCall():
-        global count, guesses, gButtons
+        global count
         currentGuess = min(count // 5, 5)
-        try:
-            while count > 0:
-                lines[count - 1].config(image=label)
-                guesses[currentGuess].remove(guesses[currentGuess][-1])
-                gButtons[currentGuess].remove(gButtons[currentGuess][-1])
-                count -= 1
-                break
-        except IndexError:
-            if LANG == "ENG":
-                errorQuit = messagebox.askokcancel(
-                    title="Unexpected error!",
-                    message="Unexpected error occurred while deleting the character. Would you like to restart the game?"
-                )
-            elif LANG == "RU":
-                errorQuit = messagebox.askokcancel(
-                    title="Неожиданная ошибка!",
-                    message="Неожиданная ошибка произошла во время удаления персонажа. Перезапустить игру?"
-                )
-            if errorQuit:
-                window.destroy()
+        if count % 5 == 0:
+            currentGuess = min(count // 5, 5) - 1
+        while count > 0:
+            lines[count - 1].config(image=label)
+            guesses[currentGuess].pop()
+            gButtons[currentGuess].pop()
+            count -= 1
+            break
 
     gandalfButton = Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf))
     bilboButton = Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo))
