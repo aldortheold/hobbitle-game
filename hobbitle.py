@@ -333,6 +333,7 @@ while True:
             statsWLabel.destroy(), closeButton1.destroy()
             allTriesLabel.destroy(), percentageLabel.destroy()
             currentStreakLabel.destroy(), bestStreakLabel.destroy()
+            
         statsWLabel = Label(window, width=560, height=248, bg=WIDGET_BLUE)
 
         if LANG == "ENG":
