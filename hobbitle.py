@@ -23,6 +23,7 @@ GRAY_TILE = "#9e9e9e"
 while True:
     window = Tk()
     window.geometry("574x725")
+    window.protocol("WM_DELETE_WINDOW", quit)
     if LANG == "ENG":
         window.title("Hobbitle")
     elif LANG == "RU":
@@ -144,8 +145,8 @@ while True:
 
     xPlace, yPlace = 10, 70
     for yAxis in range(6):
-        for xAxis in range(1, 6):
-            lines[xAxis + yAxis * 5 - 1].place(x=xPlace, y=yPlace)
+        for xAxis in range(5):
+            lines[xAxis + yAxis * 5].place(x=xPlace, y=yPlace)
             xPlace += 110
         xPlace = 10
         yPlace += 70
@@ -224,34 +225,40 @@ while True:
             count -= 1
             break
 
-    gandalfButton = Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf))
-    bilboButton = Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo))
-    thorinButton = Button(window, width=110, height=70, image=thorin, command=lambda: charCall(thorin))
-    elrondButton = Button(window, width=110, height=70, image=elrond, command=lambda: charCall(elrond))
-    beornButton = Button(window, width=110, height=70, image=beorn, command=lambda: charCall(beorn))
-    balinButton = Button(window, width=110, height=70, image=balin, command=lambda: charCall(balin))
-    dwalinButton = Button(window, width=110, height=70, image=dwalin, command=lambda: charCall(dwalin))
-    gloinButton = Button(window, width=110, height=70, image=gloin, command=lambda: charCall(gloin))
-    filiButton = Button(window, width=110, height=70, image=fili, command=lambda: charCall(fili))
-    kiliButton = Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili))
-    enterButton = Button(window, width=55, height=70, image=enter, command=enterCall)
-    trollButton = Button(window, width=110, height=70, image=troll, command=lambda: charCall(troll))
-    gollumButton = Button(window, width=110, height=70, image=gollum, command=lambda: charCall(gollum))
-    greatGoblinButton = Button(window, width=110, height=70, image=greatGoblin, command=lambda: charCall(greatGoblin))
-    smaugButton = Button(window, width=110, height=70, image=smaug, command=lambda: charCall(smaug))
-    backspaceButton = Button(window, width=55, height=70, image=backspace, command=backspaceCall)
-    
-    gandalfButton.place(x=10, y=500), bilboButton.place(x=120, y=500), thorinButton.place(x=230, y=500)
-    elrondButton.place(x=340, y=500), beornButton.place(x=450, y=500), balinButton.place(x=10, y=570)
-    dwalinButton.place(x=120, y=570), gloinButton.place(x=230, y=570), filiButton.place(x=340, y=570)
-    kiliButton.place(x=450, y=570), enterButton.place(x=10, y=640), trollButton.place(x=65, y=640)
-    gollumButton.place(x=175, y=640), greatGoblinButton.place(x=285, y=640), smaugButton.place(x=395, y=640)
-    backspaceButton.place(x=505, y=640)
+    rows1, enterButton, rows2, backspaceButton = [
+        Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf)),
+        Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo)),
+        Button(window, width=110, height=70, image=thorin, command=lambda: charCall(thorin)),
+        Button(window, width=110, height=70, image=elrond, command=lambda: charCall(elrond)),
+        Button(window, width=110, height=70, image=beorn, command=lambda: charCall(beorn)),
+        Button(window, width=110, height=70, image=balin, command=lambda: charCall(balin)),
+        Button(window, width=110, height=70, image=dwalin, command=lambda: charCall(dwalin)),
+        Button(window, width=110, height=70, image=gloin, command=lambda: charCall(gloin)),
+        Button(window, width=110, height=70, image=fili, command=lambda: charCall(fili)),
+        Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili))
+    ],  Button(window, width=55, height=70, image=enter, command=enterCall), [
+        Button(window, width=110, height=70, image=troll, command=lambda: charCall(troll)),
+        Button(window, width=110, height=70, image=gollum, command=lambda: charCall(gollum)),
+        Button(window, width=110, height=70, image=greatGoblin, command=lambda: charCall(greatGoblin)),
+        Button(window, width=110, height=70, image=smaug, command=lambda: charCall(smaug)),
+    ],  Button(window, width=55, height=70, image=backspace, command=backspaceCall)
 
-    keyButtons = [
-        gandalfButton, bilboButton, thorinButton, elrondButton, beornButton, balinButton, dwalinButton,
-        gloinButton, filiButton, kiliButton, trollButton, gollumButton, greatGoblinButton, smaugButton
-    ]
+    keyButtons = rows1 + rows2
+
+    buttonX, buttonY = 10, 500
+    for yAxis in range(2):
+        for xAxis in range(5):
+            keyButtons[xAxis + yAxis * 5].place(x=buttonX, y=buttonY)
+            buttonX += 110
+        buttonX = 10
+        buttonY += 70
+        
+    enterButton.place(x=10, y=640), backspaceButton.place(x=505, y=640)
+    buttonX += 55
+
+    for xAxis in range(4):
+        keyButtons[xAxis + 10].place(x=buttonX, y=buttonY)
+        buttonX += 110
 
     if THEME == "LIGHT":
         for keyButton in keyButtons:
