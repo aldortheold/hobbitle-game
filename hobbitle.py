@@ -159,20 +159,23 @@ while True:
         while count < 30:
             lines[count].config(image=char)
             guesses[currentGuess].append(char)
-            gButtons[currentGuess].append(keyButtons[keyboard.index(char)])
+            gButtons[currentGuess].append(charButtons[keyboard.index(char)])
             count += 1
             break
 
     def enterCall():
         global count, ALL_TRIES, ALL_WINS, CURRENT_STREAK, BEST_STREAK
-        congratsLabel = Label(window, width=554, height=215, bg="#179923", image=congrats)
-        theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000", image=theSolWas)
-        newGameButton = Button(window, bg=WIDGET_BLUE, command=lambda: window.destroy(), image=playAgain)
-        exitButton = Button(window, bg="#f0a510", command=quit, image=imgExit)
+        congratsLabel = Label(window, width=554, height=215, bg="#179923")
+        theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
+        newGameButton = Button(window, bg=WIDGET_BLUE, command=lambda: window.destroy())
+        exitButton = Button(window, bg="#f0a510", command=quit)
         currentGuess = count // 5 - 1
         guessedCombo = guesses[currentGuess]
         currentLine, currentGButton = lineGroups[currentGuess], gButtons[currentGuess]
-        if LANG == "RU":
+        if LANG == "ENG":
+            congratsLabel.config(image=congrats), theSolWasLabel.config(image=theSolWas)
+            newGameButton.config(image=playAgain), exitButton.config(image=imgExit)
+        elif LANG == "RU":
             congratsLabel.config(image=congratsRu), theSolWasLabel.config(image=theSolWasRu)
             newGameButton.config(image=playAgainRu), exitButton.config(image=imgExitRu)
         if count % 5 == 0:
@@ -217,7 +220,7 @@ while True:
         global count
         currentGuess = min(count // 5, 5)
         if count % 5 == 0:
-            currentGuess = min(count // 5, 5) - 1
+            currentGuess -= 1
         while count > 0:
             lines[count - 1].config(image=label)
             guesses[currentGuess].pop()
@@ -225,7 +228,7 @@ while True:
             count -= 1
             break
 
-    rows1, enterButton, rows2, backspaceButton = [
+    keyButtons = [
         Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf)),
         Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo)),
         Button(window, width=110, height=70, image=thorin, command=lambda: charCall(thorin)),
@@ -235,42 +238,37 @@ while True:
         Button(window, width=110, height=70, image=dwalin, command=lambda: charCall(dwalin)),
         Button(window, width=110, height=70, image=gloin, command=lambda: charCall(gloin)),
         Button(window, width=110, height=70, image=fili, command=lambda: charCall(fili)),
-        Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili))
-    ],  Button(window, width=55, height=70, image=enter, command=enterCall), [
+        Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili)),
+        Button(window, width=55, height=70, image=enter, command=enterCall),
         Button(window, width=110, height=70, image=troll, command=lambda: charCall(troll)),
         Button(window, width=110, height=70, image=gollum, command=lambda: charCall(gollum)),
         Button(window, width=110, height=70, image=greatGoblin, command=lambda: charCall(greatGoblin)),
         Button(window, width=110, height=70, image=smaug, command=lambda: charCall(smaug)),
-    ],  Button(window, width=55, height=70, image=backspace, command=backspaceCall)
+        Button(window, width=55, height=70, image=backspace, command=backspaceCall)
+    ]
 
-    keyButtons = rows1 + rows2
-
-    buttonX, buttonY = 10, 500
-    for yAxis in range(2):
-        for xAxis in range(5):
+    buttonX, buttonY, charButtons = 10, 500, keyButtons.copy()
+    charButtons.pop(10), charButtons.pop(-1)
+    for yAxis in range(3):
+        for xAxis in range(6):
+            if ((yAxis == 0) or (yAxis == 1)) and (xAxis == 5):
+                continue
             keyButtons[xAxis + yAxis * 5].place(x=buttonX, y=buttonY)
-            buttonX += 110
+            if (yAxis == 2) and (xAxis == 0):
+                buttonX += 55
+            else:
+                buttonX += 110
         buttonX = 10
         buttonY += 70
-        
-    enterButton.place(x=10, y=640), backspaceButton.place(x=505, y=640)
-    buttonX += 55
-
-    for xAxis in range(4):
-        keyButtons[xAxis + 10].place(x=buttonX, y=buttonY)
-        buttonX += 110
 
     if THEME == "LIGHT":
         for keyButton in keyButtons:
             keyButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT)
-        enterButton.config(image=enter, bg=BG_LIGHT, activebackground=BG_LIGHT)
-        backspaceButton.config(image=backspace, bg=BG_LIGHT, activebackground=BG_LIGHT)
-    
+        keyButtons[10].config(image=enter), keyButtons[15].config(image=backspace)  
     elif THEME == "DARK":
         for keyButton in keyButtons:
             keyButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK)
-        enterButton.config(image=enterLight, bg=WIDGET_DARK, activebackground=WIDGET_DARK)
-        backspaceButton.config(image=backspaceLight, bg=WIDGET_DARK, activebackground=WIDGET_DARK)
+        keyButtons[10].config(image=enterLight), keyButtons[15].config(image=backspaceLight)
     
     def russian():
         global LANG
@@ -293,8 +291,7 @@ while True:
         aboutButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT)
         statsButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT, image=stats)
         settingsButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT, image=settings)
-        enterButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT, image=enter)
-        backspaceButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT, image=backspace)
+        keyButtons[10].config(image=enter), keyButtons[15].config(image=backspace)
 
     def darkTheme():
         global THEME
@@ -307,8 +304,7 @@ while True:
         aboutButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK)
         statsButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK, image=statsLight)
         settingsButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK, image=settingsLight)
-        enterButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK, image=enterLight)
-        backspaceButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK, image=backspaceLight)
+        keyButtons[10].config(image=enterLight), keyButtons[15].config(image=backspaceLight)
 
     def settingsCall():
 
