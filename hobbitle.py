@@ -78,25 +78,12 @@ while True:
     statsWRu = PhotoImage(file="img/stats_w_ru.png")
     closeSt = PhotoImage(file="img/close_st.png")
 
-    gandalf = PhotoImage(file="img/gandalf.png")
-    bilbo = PhotoImage(file="img/bilbo.png")
-    thorin = PhotoImage(file="img/thorin.png")
-    elrond = PhotoImage(file="img/elrond.png")
-    beorn = PhotoImage(file="img/beorn.png")
-    balin = PhotoImage(file="img/balin.png")
-    dwalin = PhotoImage(file="img/dwalin.png")
-    gloin = PhotoImage(file="img/gloin.png")
-    fili = PhotoImage(file="img/fili.png")
-    kili = PhotoImage(file="img/kili.png")
-    troll = PhotoImage(file="img/troll.png")
-    gollum = PhotoImage(file="img/gollum.png")
-    greatGoblin = PhotoImage(file="img/great_goblin.png")
-    smaug = PhotoImage(file="img/smaug.png")
-
-    keyboard = [
-        gandalf, bilbo, thorin, elrond, beorn, balin, dwalin,
-        gloin, fili, kili, troll, gollum, greatGoblin, smaug
+    characters = [
+        "gandalf", "bilbo", "thorin", "elrond", "beorn", "balin", "dwalin",
+        "gloin", "fili", "kili", "troll", "gollum", "greatGoblin", "smaug"
     ]
+
+    keyboard = [PhotoImage(file=f"img/{character}.png") for character in characters]
     solution = random.sample(keyboard, 5)
 
     guesses, gButtons = [[], [], [], [], [], []], [[], [], [], [], [], []]
@@ -229,21 +216,21 @@ while True:
             break
 
     keyButtons = [
-        Button(window, width=110, height=70, image=gandalf, command=lambda: charCall(gandalf)),
-        Button(window, width=110, height=70, image=bilbo, command=lambda: charCall(bilbo)),
-        Button(window, width=110, height=70, image=thorin, command=lambda: charCall(thorin)),
-        Button(window, width=110, height=70, image=elrond, command=lambda: charCall(elrond)),
-        Button(window, width=110, height=70, image=beorn, command=lambda: charCall(beorn)),
-        Button(window, width=110, height=70, image=balin, command=lambda: charCall(balin)),
-        Button(window, width=110, height=70, image=dwalin, command=lambda: charCall(dwalin)),
-        Button(window, width=110, height=70, image=gloin, command=lambda: charCall(gloin)),
-        Button(window, width=110, height=70, image=fili, command=lambda: charCall(fili)),
-        Button(window, width=110, height=70, image=kili, command=lambda: charCall(kili)),
+        Button(window, width=110, height=70, image=keyboard[0], command=lambda: charCall(keyboard[0])),
+        Button(window, width=110, height=70, image=keyboard[1], command=lambda: charCall(keyboard[1])),
+        Button(window, width=110, height=70, image=keyboard[2], command=lambda: charCall(keyboard[2])),
+        Button(window, width=110, height=70, image=keyboard[3], command=lambda: charCall(keyboard[3])),
+        Button(window, width=110, height=70, image=keyboard[4], command=lambda: charCall(keyboard[4])),
+        Button(window, width=110, height=70, image=keyboard[5], command=lambda: charCall(keyboard[5])),
+        Button(window, width=110, height=70, image=keyboard[6], command=lambda: charCall(keyboard[6])),
+        Button(window, width=110, height=70, image=keyboard[7], command=lambda: charCall(keyboard[7])),
+        Button(window, width=110, height=70, image=keyboard[8], command=lambda: charCall(keyboard[8])),
+        Button(window, width=110, height=70, image=keyboard[9], command=lambda: charCall(keyboard[9])),
         Button(window, width=55, height=70, image=enter, command=enterCall),
-        Button(window, width=110, height=70, image=troll, command=lambda: charCall(troll)),
-        Button(window, width=110, height=70, image=gollum, command=lambda: charCall(gollum)),
-        Button(window, width=110, height=70, image=greatGoblin, command=lambda: charCall(greatGoblin)),
-        Button(window, width=110, height=70, image=smaug, command=lambda: charCall(smaug)),
+        Button(window, width=110, height=70, image=keyboard[10], command=lambda: charCall(keyboard[10])),
+        Button(window, width=110, height=70, image=keyboard[11], command=lambda: charCall(keyboard[11])),
+        Button(window, width=110, height=70, image=keyboard[12], command=lambda: charCall(keyboard[12])),
+        Button(window, width=110, height=70, image=keyboard[13], command=lambda: charCall(keyboard[13])),
         Button(window, width=55, height=70, image=backspace, command=backspaceCall)
     ]
 
