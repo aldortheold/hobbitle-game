@@ -193,13 +193,9 @@ while True:
                         currentGButton[guessedCombo.index(character)].config(bg=GRAY_TILE, activebackground=GRAY_TILE)
                 if count == 30:
                     theSolWasLabel.place(x=10, y=500)
-                    Label(window, image=solution[0], width=104, height=68, bg=BG_RED).place(x=28, y=550)
-                    Label(window, image=solution[1], width=104, height=68, bg=BG_RED).place(x=130, y=550)
-                    Label(window, image=solution[2], width=104, height=68, bg=BG_RED).place(x=233, y=550)
-                    Label(window, image=solution[3], width=104, height=68, bg=BG_RED).place(x=336, y=550)
-                    Label(window, image=solution[4], width=104, height=68, bg=BG_RED).place(x=439, y=550)
-                    newGameButton.place(x=62, y=625)
-                    exitButton.place(x=312, y=625)
+                    for i in range(5):
+                        Label(window, image=solution[i], width=104, height=68, bg=BG_RED).place(x=28 + 103 * i, y=550)
+                    newGameButton.place(x=62, y=625), exitButton.place(x=312, y=625)
                     ALL_TRIES += 1
                     CURRENT_STREAK = 0
 
@@ -215,17 +211,24 @@ while True:
             count -= 1
             break
 
-    keyButtons, bIndex = [Button(window, height=70) for _ in range(16)], 0
-    for newButton in keyButtons:
-        if bIndex < 10:
-            newButton.config(width=110, image=keyboard[bIndex], command=lambda: charCall(keyboard[bIndex]))
-        elif bIndex == 10:
-            newButton.config(width=70, image=enter, command=enterCall)
-        elif 10 < bIndex < 15:
-            newButton.config(width=110, image=keyboard[bIndex - 2], command=lambda: charCall(keyboard[bIndex - 2]))
-        elif bIndex == 15:
-            newButton.config(width=70, image=backspace, command=backspaceCall)
-        bIndex += 1
+    keyButtons = [
+        Button(window, width=110, height=70, image=keyboard[0], command=lambda: charCall(keyboard[0])),
+        Button(window, width=110, height=70, image=keyboard[1], command=lambda: charCall(keyboard[1])),
+        Button(window, width=110, height=70, image=keyboard[2], command=lambda: charCall(keyboard[2])),
+        Button(window, width=110, height=70, image=keyboard[3], command=lambda: charCall(keyboard[3])),
+        Button(window, width=110, height=70, image=keyboard[4], command=lambda: charCall(keyboard[4])),
+        Button(window, width=110, height=70, image=keyboard[5], command=lambda: charCall(keyboard[5])),
+        Button(window, width=110, height=70, image=keyboard[6], command=lambda: charCall(keyboard[6])),
+        Button(window, width=110, height=70, image=keyboard[7], command=lambda: charCall(keyboard[7])),
+        Button(window, width=110, height=70, image=keyboard[8], command=lambda: charCall(keyboard[8])),
+        Button(window, width=110, height=70, image=keyboard[9], command=lambda: charCall(keyboard[9])),
+        Button(window, width=55, height=70, image=enter, command=enterCall),
+        Button(window, width=110, height=70, image=keyboard[10], command=lambda: charCall(keyboard[10])),
+        Button(window, width=110, height=70, image=keyboard[11], command=lambda: charCall(keyboard[11])),
+        Button(window, width=110, height=70, image=keyboard[12], command=lambda: charCall(keyboard[12])),
+        Button(window, width=110, height=70, image=keyboard[13], command=lambda: charCall(keyboard[13])),
+        Button(window, width=55, height=70, image=backspace, command=backspaceCall)
+    ]
 
     buttonX, buttonY, charButtons = 10, 500, keyButtons.copy()
     charButtons.pop(10), charButtons.pop(-1)
