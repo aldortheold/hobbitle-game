@@ -215,24 +215,17 @@ while True:
             count -= 1
             break
 
-    keyButtons = [
-        Button(window, width=110, height=70, image=keyboard[0], command=lambda: charCall(keyboard[0])),
-        Button(window, width=110, height=70, image=keyboard[1], command=lambda: charCall(keyboard[1])),
-        Button(window, width=110, height=70, image=keyboard[2], command=lambda: charCall(keyboard[2])),
-        Button(window, width=110, height=70, image=keyboard[3], command=lambda: charCall(keyboard[3])),
-        Button(window, width=110, height=70, image=keyboard[4], command=lambda: charCall(keyboard[4])),
-        Button(window, width=110, height=70, image=keyboard[5], command=lambda: charCall(keyboard[5])),
-        Button(window, width=110, height=70, image=keyboard[6], command=lambda: charCall(keyboard[6])),
-        Button(window, width=110, height=70, image=keyboard[7], command=lambda: charCall(keyboard[7])),
-        Button(window, width=110, height=70, image=keyboard[8], command=lambda: charCall(keyboard[8])),
-        Button(window, width=110, height=70, image=keyboard[9], command=lambda: charCall(keyboard[9])),
-        Button(window, width=55, height=70, image=enter, command=enterCall),
-        Button(window, width=110, height=70, image=keyboard[10], command=lambda: charCall(keyboard[10])),
-        Button(window, width=110, height=70, image=keyboard[11], command=lambda: charCall(keyboard[11])),
-        Button(window, width=110, height=70, image=keyboard[12], command=lambda: charCall(keyboard[12])),
-        Button(window, width=110, height=70, image=keyboard[13], command=lambda: charCall(keyboard[13])),
-        Button(window, width=55, height=70, image=backspace, command=backspaceCall)
-    ]
+    keyButtons, bIndex = [Button(window, height=70) for _ in range(16)], 0
+    for newButton in keyButtons:
+        if bIndex < 10:
+            newButton.config(width=110, image=keyboard[bIndex], command=lambda: charCall(keyboard[bIndex]))
+        elif bIndex == 10:
+            newButton.config(width=70, image=enter, command=enterCall)
+        elif 10 < bIndex < 15:
+            newButton.config(width=110, image=keyboard[bIndex - 2], command=lambda: charCall(keyboard[bIndex - 2]))
+        elif bIndex == 15:
+            newButton.config(width=70, image=backspace, command=backspaceCall)
+        bIndex += 1
 
     buttonX, buttonY, charButtons = 10, 500, keyButtons.copy()
     charButtons.pop(10), charButtons.pop(-1)
