@@ -91,9 +91,9 @@ while True:
     congrats = random.choice([awesome, excellent, greatJob, outstanding, wellDone])
     congratsRu = random.choice([awesomeRu, excellentRu, greatJobRu, outstandingRu, wellDoneRu])
 
-    def rulesCall():
+    def rulesCall() -> None:
 
-        def closeInfo():
+        def closeInfo() -> None:
             rulesLabel.destroy()
             closeButton.destroy()
 
@@ -140,17 +140,17 @@ while True:
 
     count = 0
 
-    def charCall(pos: int):
+    def charCall(pos: int) -> None:
+        """Makes the clicked character appear on the board in the right spot"""
         global count
         currentGuess = min(count // 5, 5)
-        while count < 30:
-            lines[count].config(image=keyboard[pos])
-            guesses[currentGuess].append(keyboard[pos])
-            gButtons[currentGuess].append(charButtons[pos])
-            count += 1
-            break
+        lines[count].config(image=keyboard[pos])
+        guesses[currentGuess].append(keyboard[pos])
+        gButtons[currentGuess].append(charButtons[pos])
+        count += 1
 
-    def enterCall():
+    def enterCall() -> None:
+        """When called in the right condition, compares player's guess to the solution and does a bit of Wordle magic"""
         global count, ALL_TRIES, ALL_WINS, CURRENT_STREAK, BEST_STREAK
         congratsLabel = Label(window, width=554, height=215, bg="#179923")
         theSolWasLabel = Label(window, width=554, height=215, bg="#9a0000")
@@ -199,17 +199,16 @@ while True:
                     ALL_TRIES += 1
                     CURRENT_STREAK = 0
 
-    def backspaceCall():
+    def backspaceCall() -> None:
+        """Deletes the last typed character"""
         global count
         currentGuess = min(count // 5, 5)
         if count % 5 == 0:
             currentGuess -= 1
-        while count > 0:
-            lines[count - 1].config(image=label)
-            guesses[currentGuess].pop()
-            gButtons[currentGuess].pop()
-            count -= 1
-            break
+        lines[count - 1].config(image=label)
+        guesses[currentGuess].pop()
+        gButtons[currentGuess].pop()
+        count -= 1
 
     keyButtons = [
         Button(window, width=110, height=70, image=keyboard[0], command=lambda: charCall(0)),
@@ -253,17 +252,17 @@ while True:
             keyButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK)
         keyButtons[10].config(image=enterLight), keyButtons[15].config(image=backspaceLight)
     
-    def russian():
+    def russian() -> None:
         global LANG
         LANG = "RU"
         titleLabel.config(text="ХОББИТЛИ"), window.title("Хоббитли")
 
-    def english():
+    def english() -> None:
         global LANG
         LANG = "ENG"
         titleLabel.config(text="HOBBITLE"), window.title("Hobbitle")
 
-    def lightTheme():
+    def lightTheme() -> None:
         global THEME
         THEME = "LIGHT"
         for line in lines:
@@ -276,7 +275,7 @@ while True:
         settingsButton.config(bg=BG_LIGHT, activebackground=BG_LIGHT, image=settings)
         keyButtons[10].config(image=enter), keyButtons[15].config(image=backspace)
 
-    def darkTheme():
+    def darkTheme() -> None:
         global THEME
         THEME = "DARK"
         for line in lines:
@@ -289,9 +288,9 @@ while True:
         settingsButton.config(bg=WIDGET_DARK, activebackground=WIDGET_DARK, image=settingsLight)
         keyButtons[10].config(image=enterLight), keyButtons[15].config(image=backspaceLight)
 
-    def settingsCall():
+    def settingsCall() -> None:
 
-        def closeSettings():
+        def closeSettings() -> None:
             settingsListLabel.destroy(), closeButton.destroy()
             lightButtonB.destroy(), darkButtonB.destroy()
             russianButtonB.destroy(),englishButtonB.destroy()
@@ -313,9 +312,9 @@ while True:
         settingsListLabel.place(x=0, y=0), closeButton.place(x=494, y=18), lightButtonB.place(x=300, y=220),
         darkButtonB.place(x=300, y=300), russianButtonB.place(x=300, y=410), englishButtonB.place(x=300, y=490)
 
-    def statsCall():
+    def statsCall() -> None:
 
-        def closeStats():
+        def closeStats() -> None:
             statsWLabel.destroy(), closeButton1.destroy()
             allTriesLabel.destroy(), percentageLabel.destroy()
             currentStreakLabel.destroy(), bestStreakLabel.destroy()
